@@ -1,6 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Actions from './redux/actions'
+
+import LoginForm from './components/LoginForm'
+
 
 class App extends React.Component {
   state = {
@@ -64,17 +68,12 @@ class App extends React.Component {
 
   componentDidMount(){
     if(localStorage.token){
-      fetch('http://localhost:3000/users', {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: localStorage.token
-        }
-      })
+      this.props.persistUserFromAPI()
     }
   }
 
   render(){
-    const {username, password} = this.state
+    const {username, password} = this.props
 
     return (
       <div className="App">
@@ -87,4 +86,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({user: state})
+
+const mapDispatchToProps = {
+  persistUserFromAPI: Actions.persistUserFromAPI
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
