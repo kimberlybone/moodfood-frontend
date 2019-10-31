@@ -2,6 +2,6 @@ import React from 'react'
 
 export default class HomeContainer extends React.Component {
   render(){
-    return()
+    return(<div>Home Container</div>)
   }
 }

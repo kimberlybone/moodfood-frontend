@@ -85,7 +85,7 @@ class App extends React.Component {
             path='/home'
             render={() =>
               <HomeContainer/>
-            }
+            } />
         </Router>
         </div>
       );
