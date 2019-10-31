@@ -1,9 +1,11 @@
 import React from 'react'
-import {loginUserToDB} from './redux/userActions'
+import { loginUserToDB } from '../redux/userActions'
+import { connect } from 'react-redux';
+// import Actions from '../Redux/userActions';
 
-export default class LoginForm extends React.Component {
+class LoginForm extends React.Component {
   state = {
-    username: '',
+    name: '',
     password: ''
   }
 
@@ -16,24 +18,23 @@ export default class LoginForm extends React.Component {
 
   render(){
     return(
-      <form onChange={this.handleChange} onSubmit={this.handleSUbmit}>
-        <input
+      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+        <p>Username: <input
           type='text'
-          name='username'
-          value={null}
-          placeholder='Username'/>
-        <input
-          type='text'
+          name='name'
+          value={this.state.name}
+          placeholder='Username'/></p>
+        <p>Password: <input
+          type='password'
           name='password'
-          value={null}
-          placeholder='Password'/>
+          value={this.state.password}
+          placeholder='Password'/></p>
+        <input type='submit'/>
       </form>
     )
   }
 }
 
-const mapDispatchToProps = {
-  loginUserToDB: Actions.loginUserToDB
-};
+const mapDispatchToProps = {loginUserToDB};
 
 export default connect(null, mapDispatchToProps)(LoginForm)

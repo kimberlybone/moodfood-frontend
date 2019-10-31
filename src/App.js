@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import userActions from './redux/actions'
+import userActions from './redux/userActions'
+import { connect } from 'react-redux'
 
 import LoginForm from './components/LoginForm'
 
 
 class App extends React.Component {
-  state = {
-    loggedInUserId: localStorage.loggedInUserId,
-    token: localStorage.token,
-    errors: []
-  }
+  // state = {
+  //   loggedInUserId: localStorage.loggedInUserId,
+  //   token: localStorage.token,
+  //   errors: []
+  // }
 
   // setAuth = (loggedInUserId, token) => {
   // localStorage.loggedInUserId = loggedInUserId;
@@ -71,20 +72,31 @@ class App extends React.Component {
   // }
 
   render(){
-    const {username, password} = this.props
-
-      return (
+    return (
         <div className="App">
-          <LoginForm/>
-          </div>
-        );
+          <p>Mood & Food </p>
+        <Router>
+          <Route exact
+            path= '/login'
+            render={(props) =>
+                < LoginForm />}
+                />
+          <Route exact
+            path='/home'
+            render={() =>
+              <HomeContainer/>
+            }
+        </Router>
+        </div>
+      );
     }
   }
 
-const mapStateToProps = state => ({user: state})
+// const mapStateToProps = state => ({user: state})
+//
+// const mapDispatchToProps = {
+//   persistUserFromAPI: Actions.persistUserFromAPI
+// }
+export default App
 
-const mapDispatchToProps = {
-  persistUserFromAPI: Actions.persistUserFromAPI
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps)(App);

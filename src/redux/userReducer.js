@@ -1,14 +1,14 @@
 // const initialState = {}
 
-export defualt (state = {}, { type, user }) => {
-  switch (type) {
+export default (state = {}, { type, user }) => {
+  switch(type) {
     case 'SET_USER':
       return {
       ...state,
       ...user
-  }
-    case 'CLEAR_USER':
-      return {}
+      }
+    // case 'CLEAR_USER':
+    //   return {}
     default:
       return state
   }

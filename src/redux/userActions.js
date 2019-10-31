@@ -1,26 +1,27 @@
 // ACTION CREATORS
+const URL = 'http://localhost:3000'
 
-const setUserLogin = userData = ({
+const setUserLogin = userData => ({
   type: 'SET_USER',
   userData
 })
 
-const clearUserAction = () => ({
-  type: 'CLEAR_USER'
-})
+// const clearUserAction = () => ({
+//   type: 'CLEAR_USER'
+// })
 
 // FETCH
-const persistUserFromAPI = () => dispatch => {
-  fetch('http://localhost:3000/users', {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.token
-    }
-  })
-  dispatch(setUserAction(user))
-}
+// const persistUserFromAPI = user => dispatch => {
+//   fetch(URL + '/users', {
+//     headers: {
+//       'Content-Type': 'application/json',
+//       Authorization: localStorage.token
+//     }
+//   })
+//   dispatch(setUserLogin(user))
+// }
 
-const loginUserToDB = userData => dispatch => {
+export const loginUserToDB = userData => dispatch => {
   let config = {
     method: 'POST',
     headers: {
@@ -31,9 +32,9 @@ const loginUserToDB = userData => dispatch => {
   }
   fetch(URL + '/login', config)
   .then(res => res.json())
-  .then(data => {
-    localStorage.token = user.token
-    dispatch(setUserLogin(data.user))
+  .then(data => console.log(data)
+    // localStorage.token = data.token
+    // dispatch(setUserLogin(data.user))
     // if (user.errors) {
     //   this.setState({
     //     errors: user.errors
@@ -41,14 +42,14 @@ const loginUserToDB = userData => dispatch => {
     // } else {
     //   this.setAuth(user.user_id, user.token)
     // }
-  })
+  )
 }
 
-const createNewUserToDB = userData => dispatch => {
+// const createNewUserToDB = userData => dispatch => {
+//
+// }
 
-}
-
-export default(
-  persistUserFromAPI,
-  loginUserToDB
-)
+// export {
+//   persistUserFromAPI,
+//   loginUserToDB
+// }
