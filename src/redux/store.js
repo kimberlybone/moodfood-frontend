@@ -1,7 +1,12 @@
 import { createStore } from 'redux'
-import reducer from './reducers'
+import userReducer from './reducers'
 
 import {applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 
-export default createStore(rootReducers, applyMiddleware(thunk))
+const reducer = combineReducers({
+  user: userReducer
+})
+
+export default createStore(reducer, applyMiddleware(thunk))
+// thunk makes dispatches asynchronous

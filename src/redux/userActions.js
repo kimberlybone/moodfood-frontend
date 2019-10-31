@@ -1,8 +1,8 @@
 // ACTION CREATORS
 
-const setUserAction = userObj =. ({
+const setUserLogin = userData = ({
   type: 'SET_USER',
-  payload: userObj
+  userData
 })
 
 const clearUserAction = () => ({
@@ -27,23 +27,25 @@ const loginUserToDB = userData => dispatch => {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(userData)
   }
   fetch(URL + '/login', config)
   .then(res => res.json())
-  .then(user => {
-    if (user.errors) {
-      this.setState({
-        errors: user.errors
-      })
-    } else {
-      this.setAuth(user.user_id, user.token)
-    }
+  .then(data => {
+    localStorage.token = user.token
+    dispatch(setUserLogin(data.user))
+    // if (user.errors) {
+    //   this.setState({
+    //     errors: user.errors
+    //   })
+    // } else {
+    //   this.setAuth(user.user_id, user.token)
+    // }
   })
 }
 
 const createNewUserToDB = userData => dispatch => {
-  
+
 }
 
 export default(
