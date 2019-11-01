@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import userReducer from './userReducer'
 import errorReducer from './errorReducer'
+import moodReducer from './moodReducer'
 import { routerReducer } from 'react-router-redux'
 import thunk from 'redux-thunk'
 // import createHistory from 'history/createBrowserHistory'
@@ -12,7 +13,8 @@ import thunk from 'redux-thunk'
 const reducer = combineReducers({
   routing: routerReducer,
   user: userReducer,
-  errors: errorReducer
+  errors: errorReducer,
+  colors: moodReducer
 })
 
 export default createStore(reducer, applyMiddleware(thunk))

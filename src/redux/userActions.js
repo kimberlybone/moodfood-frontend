@@ -19,7 +19,10 @@ export const persistUserFromAPI = user => dispatch => {
   .then(user => dispatch(setUserLogin(user)))
 }
 
+
+
 export const loginUserToDB = userData => dispatch => {
+
   let config = {
     method: 'POST',
     headers: {
@@ -28,6 +31,7 @@ export const loginUserToDB = userData => dispatch => {
     },
     body: JSON.stringify(userData)
   }
+
   fetch(URL + '/login', config)
   .then(res => res.json())
   .then(data => {
@@ -35,7 +39,6 @@ export const loginUserToDB = userData => dispatch => {
       localStorage.token = data.token
       localStorage.id = data.user.id
       dispatch(setUserLogin(data.user))
-      console.log('User logged')
     } else {
       dispatch(displayErrors(data.errors))
     }

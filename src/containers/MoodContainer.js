@@ -1,5 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { onClick } from './redux/moodActions'
+import { connect } from 'react-redux'
 
 const colorArray = [
   "red",
@@ -11,7 +13,7 @@ const colorArray = [
   "magenta"
 ]
 
-export default class MoodContainer extends React.Component {
+class MoodContainer extends React.Component {
   state = {
     color: "white"
   }
@@ -45,3 +47,11 @@ export default class MoodContainer extends React.Component {
       </div>)
   }
 }
+
+const mapStateToProps = state => ({colors: state})
+
+const mapDispatchToProps = {
+  onClick: onClick
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoodContainer);
