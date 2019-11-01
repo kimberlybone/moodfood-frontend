@@ -3,7 +3,7 @@ import './App.css';
 import { persistUserFromAPI } from './redux/userActions'
 import { connect } from 'react-redux'
 
-import MoodContainer from './containers/HomeContainer'
+import MoodContainer from './containers/MoodContainer'
 import LoginForm from './components/LoginForm'
 import { Route } from 'react-router-dom'
 
@@ -73,11 +73,12 @@ class App extends React.Component {
   }
 
   render(){
+    // console.log(this.props)
     return (
         <div className="App">
           <p>Mood & Food </p>
           <Route exact
-            path= '/login'
+            path='/login'
             render={(props) =>
                 < LoginForm />}
                 />
@@ -92,7 +93,7 @@ class App extends React.Component {
   }
 
 const mapStateToProps = state => ({user: state})
-//
+
 const mapDispatchToProps = {
   persistUserFromAPI: persistUserFromAPI
 }

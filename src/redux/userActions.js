@@ -1,25 +1,22 @@
+import { push } from 'react-router-redux'
 // ACTION CREATORS
+
 const URL = 'http://localhost:3000'
 
-const setUserLogin = userData => ({
-  type: 'SET_USER',
-  userData
-})
-
-// const clearUserAction = () => ({
-//   type: 'CLEAR_USER'
-// })
+const setUserLogin = user => ({type: 'SET_USER', user})
+const displayErrors = errors => ({type: 'ERRORS', errors})
+const clearUserAction = () => ({type: 'CLEAR_USER'})
 
 // FETCH
 export const persistUserFromAPI = user => dispatch => {
-  fetch(URL + '/users', {
+  fetch(URL + `/users/${localStorage.id}`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: localStorage.token
     }
   })
-  // console.log(localStorage.token)
-  dispatch(setUserLogin(user))
+  .then(res => res.json())
+  .then(user => dispatch(setUserLogin(user)))
 }
 
 export const loginUserToDB = userData => dispatch => {
@@ -34,24 +31,17 @@ export const loginUserToDB = userData => dispatch => {
   fetch(URL + '/login', config)
   .then(res => res.json())
   .then(data => {
-    localStorage.token = data.token
-    dispatch(setUserLogin(data.user))
-  }
-    // if (user.errors) {
-    //   this.setState({
-    //     errors: user.errors
-    //   })
-    // } else {
-    //   this.setAuth(user.user_id, user.token)
-    // }
-  )
+    if (!data.errors) {
+      localStorage.token = data.token
+      localStorage.id = data.user.id
+      dispatch(setUserLogin(data.user))
+      console.log('User logged')
+    } else {
+      dispatch(displayErrors(data.errors))
+    }
+  })
 }
 
 // const createNewUserToDB = userData => dispatch => {
 //
-// }
-
-// export {
-//   persistUserFromAPI,
-//   loginUserToDB
 // }

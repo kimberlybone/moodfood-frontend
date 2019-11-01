@@ -3,12 +3,12 @@
 export default (state = {}, { type, user }) => {
   switch(type) {
     case 'SET_USER':
+    // console.log('reducer: ', user);
       return {
-      ...state,
       ...user
       }
-    // case 'CLEAR_USER':
-    //   return {}
+    case 'CLEAR_USER':
+      return {}
     default:
       return state
   }
