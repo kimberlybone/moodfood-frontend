@@ -11,15 +11,16 @@ const setUserLogin = userData => ({
 // })
 
 // FETCH
-// const persistUserFromAPI = user => dispatch => {
-//   fetch(URL + '/users', {
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Authorization: localStorage.token
-//     }
-//   })
-//   dispatch(setUserLogin(user))
-// }
+export const persistUserFromAPI = user => dispatch => {
+  fetch(URL + '/users', {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: localStorage.token
+    }
+  })
+  // console.log(localStorage.token)
+  dispatch(setUserLogin(user))
+}
 
 export const loginUserToDB = userData => dispatch => {
   let config = {
@@ -32,9 +33,10 @@ export const loginUserToDB = userData => dispatch => {
   }
   fetch(URL + '/login', config)
   .then(res => res.json())
-  .then(data => console.log(data)
-    // localStorage.token = data.token
-    // dispatch(setUserLogin(data.user))
+  .then(data => {
+    localStorage.token = data.token
+    dispatch(setUserLogin(data.user))
+  }
     // if (user.errors) {
     //   this.setState({
     //     errors: user.errors

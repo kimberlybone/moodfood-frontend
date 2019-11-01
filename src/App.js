@@ -1,10 +1,11 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import userActions from './redux/userActions'
+import { persistUserFromAPI } from './redux/userActions'
 import { connect } from 'react-redux'
 
+import MoodContainer from './containers/HomeContainer'
 import LoginForm from './components/LoginForm'
+import { Route } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -65,38 +66,35 @@ class App extends React.Component {
   //   })
   // }
 
-  // componentDidMount(){
-  //   if(localStorage.token){
-  //     this.props.persistUserFromAPI()
-  //   }
-  // }
+  componentDidMount(){
+    if(localStorage.token){
+      this.props.persistUserFromAPI()
+    }
+  }
 
   render(){
     return (
         <div className="App">
           <p>Mood & Food </p>
-        <Router>
           <Route exact
             path= '/login'
             render={(props) =>
                 < LoginForm />}
                 />
           <Route exact
-            path='/home'
+            path='/mood'
             render={() =>
-              <HomeContainer/>
+              <MoodContainer/>
             } />
-        </Router>
         </div>
       );
     }
   }
 
-// const mapStateToProps = state => ({user: state})
+const mapStateToProps = state => ({user: state})
 //
-// const mapDispatchToProps = {
-//   persistUserFromAPI: Actions.persistUserFromAPI
-// }
-export default App
+const mapDispatchToProps = {
+  persistUserFromAPI: persistUserFromAPI
+}
 
-// export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

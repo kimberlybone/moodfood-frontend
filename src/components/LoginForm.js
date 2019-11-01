@@ -1,7 +1,7 @@
 import React from 'react'
 import { loginUserToDB } from '../redux/userActions'
 import { connect } from 'react-redux';
-// import Actions from '../Redux/userActions';
+import { NavLink } from 'react-router-dom'
 
 class LoginForm extends React.Component {
   state = {
@@ -29,12 +29,12 @@ class LoginForm extends React.Component {
           name='password'
           value={this.state.password}
           placeholder='Password'/></p>
-        <input type='submit'/>
+        <NavLink to='/mood' />
       </form>
     )
   }
 }
 
-const mapDispatchToProps = {loginUserToDB};
+const mapDispatchToProps = { loginUserToDB };
 
 export default connect(null, mapDispatchToProps)(LoginForm)
