@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import MoodContainer from './containers/MoodContainer'
 import LoginForm from './components/LoginForm'
+import Slideshow from './components/Slideshow'
 import { Route } from 'react-router-dom'
 
 
@@ -86,6 +87,11 @@ class App extends React.Component {
             path='/mood'
             render={() =>
               <MoodContainer/>
+            } />
+          <Route exact
+            path='/slideshow'
+            render={() =>
+              <Slideshow/>
             } />
         </div>
       );
