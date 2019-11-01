@@ -1,5 +1,5 @@
 import React from 'react'
-import {loginUserToDB} from '../redux/userActions'
+import { loginUserToDB } from '../redux/userActions'
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom'
 
@@ -9,20 +9,22 @@ class LoginForm extends React.Component {
     password: ''
   }
 
-  handleChange = e => this.setState({[e.target.name]: e.target.value})
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   handleSubmit = e => {
+    const { loginUserToDB, history } = this.props
     e.preventDefault()
-    this.props.loginUserToDB(this.state)
+    loginUserToDB(this.state)
     if(localStorage.length){
-      this.props.history.push('/mood')
+      history.push('/mood')
     }
 
   }
 
   displayErrors = () => {
-    if(this.props.errors){
-      return this.props.errors.map(error => {
+    const { errors } = this.props
+    if(errors){
+      return errors.map(error => {
         return <li key={error}>{error}</li>
       })
     } else {
@@ -31,19 +33,19 @@ class LoginForm extends React.Component {
   }
 
   render(){
-    console.log(this.props.errors)
+    const { name, password } = this.state
     return(
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+      <form onChange={ this.handleChange } onSubmit={ this.handleSubmit }>
         {this.displayErrors()}
         <p>Username: <input
           type='text'
           name='name'
-          value={this.state.name}
+          value={ name }
           placeholder='Username'/></p>
         <p>Password: <input
           type='password'
           name='password'
-          value={this.state.password}
+          value={ password }
           placeholder='Password'/></p>
         <input type='submit'></input>
       </form>
@@ -51,7 +53,7 @@ class LoginForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({errors: state.errors})
+const mapStateToProps = state => ({ errors: state.errors })
 
 const mapDispatchToProps = { loginUserToDB };
 

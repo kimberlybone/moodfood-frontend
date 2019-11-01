@@ -1,57 +1,46 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { onClick } from './redux/moodActions'
+import { clickToChangeColor } from '../redux/moodActions'
 import { connect } from 'react-redux'
 
-const colorArray = [
-  "red",
-  "lightblue",
-  "pink",
-  "orange",
-  "yellow",
-  "rosybrown",
-  "magenta"
-]
+// const colorArray = [
+//   "red",
+//   "lightblue",
+//   "pink",
+//   "orange",
+//   "yellow",
+//   "rosybrown",
+//   "magenta"
+// ]
 
 class MoodContainer extends React.Component {
-  state = {
-    color: "white"
-  }
-
-  changeColor(e) {
-    this.setState({
-      color: e.target.name
-    })
-  }
 
   render(){
-    const stylesObj = {
-      background: this.state.color
-    };
+    const { clickToChangeColor } = this.props
 
     return(
-      <div style={stylesObj}>
+      <div>
         <h1>How are you feeling today...</h1>
         <div className='emotions'>
-          <p onClick={e => this.changeColor(e)}><NavLink name='lightyellow' to='/mood'>Adventurous|Curious</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='red' to='/mood'>Angry|Tense</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='orange' to='/mood'>Anxious|Stressed</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='lightblue' to='/mood'>Calm</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='lightgreen' to='/mood'>Happy|Energetic</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='magenta' to='/mood'>Indifferent</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='rosybrown' to='/mood'></NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='lightpink' to='/mood'>Romantic</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='purple' to='/mood'>Sad</NavLink></p>
-          <p onClick={e => this.changeColor(e)}><NavLink name='white' to='/mood'>Just Hungry</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='lightyellow' to='/slideshow'>Adventurous|Curious</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='red' to='/slideshow'>Angry|Tense</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='orange' to='/slideshow'>Anxious|Stressed</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='lightblue' to='/slideshow'>Calm</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='lightgreen' to='/slideshow'>Happy|Energetic</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='magenta' to='/slideshow'>Indifferent</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='rosybrown' to='/slideshow'></NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='lightpink' to='/slideshow'>Romantic</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='purple' to='/slideshow'>Sad</NavLink></p>
+          <p onClick={e => clickToChangeColor(e)}><NavLink name='white' to='/slideshow'>Just Hungry</NavLink></p>
         </div>
       </div>)
   }
 }
 
-const mapStateToProps = state => ({colors: state})
+const mapStateToProps = state => ({ colors: state.colors })
 
 const mapDispatchToProps = {
-  onClick: onClick
+  clickToChangeColor: clickToChangeColor
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoodContainer);
