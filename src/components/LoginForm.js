@@ -1,7 +1,8 @@
 import React from 'react'
 import { loginUserToDB } from '../redux/userActions'
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import '../Assets/AccountInfo.css'
 
 class LoginForm extends React.Component {
   state = {
@@ -12,14 +13,16 @@ class LoginForm extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   handleSubmit = e => {
-    const { loginUserToDB, history } = this.props
+    const { loginUserToDB } = this.props
     e.preventDefault()
     loginUserToDB(this.state)
-    if(localStorage.length){
-      history.push('/mood')
-    }
-
   }
+  // componentDidUpdate(prevProps, prevState) {
+  //   const { user, history } = this.props
+  //   if(user.name){
+  //     history.push('/mood')
+  //   }
+  // }
 
   displayErrors = () => {
     const { errors } = this.props
@@ -35,25 +38,31 @@ class LoginForm extends React.Component {
   render(){
     const { name, password } = this.state
     return(
-      <form onChange={ this.handleChange } onSubmit={ this.handleSubmit }>
-        {this.displayErrors()}
-        <p>Username: <input
-          type='text'
-          name='name'
-          value={ name }
-          placeholder='Username'/></p>
-        <p>Password: <input
-          type='password'
-          name='password'
-          value={ password }
-          placeholder='Password'/></p>
-        <input type='submit'></input>
-      </form>
+      <div className='login-page'>
+        <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
+          {this.displayErrors()}
+          <p className='form-input'>
+            Username: <br></br> <input
+            type='text'
+            name='name'
+            className='form-input'
+            value={ name }
+            placeholder='Username'/></p>
+          <p className='form-input'>
+            Password: <br></br><input
+            type='password'
+            name='password'
+            className='form-input'
+            value={ password }
+            placeholder='Password'/></p>
+          <input className='form-btn' type='submit'></input>
+        </form>
+      </div>
     )
   }
 }
 
-const mapStateToProps = state => ({ errors: state.errors })
+const mapStateToProps = state => ({ errors: state.errors, user: state.user })
 
 const mapDispatchToProps = { loginUserToDB };
 

@@ -1,5 +1,5 @@
-import { push } from 'react-router-redux'
-// ACTION CREATORS 
+// import { push } from 'react-router-redux'
+// ACTION CREATORS
 
 const URL = 'http://localhost:3000'
 
@@ -22,8 +22,8 @@ export const persistUserFromAPI = user => dispatch => {
 
 
 export const loginUserToDB = userData => dispatch => {
-
-  let config = {
+  console.log('fetching', userData);
+  const config = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -43,6 +43,11 @@ export const loginUserToDB = userData => dispatch => {
       dispatch(displayErrors(data.errors))
     }
   })
+}
+
+export const logout = () => dispatch => {
+  dispatch(clearUserAction())
+  localStorage.clear()
 }
 
 // const createNewUserToDB = userData => dispatch => {

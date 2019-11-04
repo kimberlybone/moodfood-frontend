@@ -7,6 +7,9 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from './redux/store'
 import {BrowserRouter as Router, Switch} from 'react-router-dom'
+
+// import NavBar from './containers/NavBar'
+
 // import { syncHistoryWithStore } from 'react-router-redux'
 
 

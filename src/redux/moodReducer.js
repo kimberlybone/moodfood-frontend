@@ -1,9 +1,10 @@
-export default (state = {}, { type, colors }) => {
-  console.log({type, colors});
+export default (state = {}, { type, colors, recipes }) => {
+  console.log({type, colors, recipes});
   switch(type) {
     case 'COLOR':
-    // console.log('reducer: ', user);
       return colors
+    case 'RECIPE':
+      return recipes
     default:
       return state
   }

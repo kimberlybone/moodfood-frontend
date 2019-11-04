@@ -6,7 +6,9 @@ import { connect } from 'react-redux'
 import MoodContainer from './containers/MoodContainer'
 import LoginForm from './components/LoginForm'
 import Slideshow from './components/Slideshow'
-import { Route } from 'react-router-dom'
+import NavBar from './containers/NavBar'
+
+import { Route, Redirect } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -17,19 +19,36 @@ class App extends React.Component {
     }
   }
 
-  render(){
+  handleLogin = () => {
+    const { user } = this.props
+    if( user.name ){
+      return <Redirect to='/mood' />
+    } else {
+      return <LoginForm />
+    }
+  }
+
+  showNavBar = () => {
+    const { user } = this.props
+    if( user.name ){
+      return <NavBar/>
+    } else {
+      return <LoginForm />
+    }
+  }
+
+render(){
 
     const stylesObj = {
       background: this.props.colors
     };
+
     return (
         <div className="App" style={ stylesObj }>
-          <p>Mood & Food </p>
+          { this.showNavBar() }
           <Route exact
             path='/login'
-            render={ (props) =>
-                < LoginForm />}
-                />
+            render={ this.handleLogin } />
           <Route exact
             path='/mood'
             render={() =>
@@ -45,7 +64,7 @@ class App extends React.Component {
     }
   }
 
-const mapStateToProps = state => ({ user: state, colors: state.colors })
+const mapStateToProps = state => ({ user: state.user, colors: state.colors })
 
 const mapDispatchToProps = {
   persistUserFromAPI: persistUserFromAPI

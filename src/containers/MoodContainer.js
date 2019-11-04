@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { clickToChangeColor } from '../redux/moodActions'
+import { clickToChangeColor, fetchRecipes } from '../redux/moodActions'
 import { connect } from 'react-redux'
+import '../Assets/MoodContainer.css'
 
 // const colorArray = [
 //   "red",
@@ -15,8 +16,11 @@ import { connect } from 'react-redux'
 
 class MoodContainer extends React.Component {
 
+
+
   render(){
     const { clickToChangeColor } = this.props
+    // console.log(this.props)
 
     return(
       <div>
@@ -37,10 +41,11 @@ class MoodContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ colors: state.colors })
+const mapStateToProps = state => ({ colors: state.colors, recipes: state.recipes })
 
 const mapDispatchToProps = {
-  clickToChangeColor: clickToChangeColor
+  clickToChangeColor: clickToChangeColor,
+  fetchRecipes: fetchRecipes
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoodContainer);
