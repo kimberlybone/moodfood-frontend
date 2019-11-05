@@ -21,6 +21,18 @@ class SignupForm extends React.Component {
     createNewUserToDB(this.state)
   }
 
+  displayErrors = () => {
+    const { errors } = this.props
+    if(errors){
+      return errors.map(error => {
+        return <li key={error}>{error}</li>
+      })
+    } else {
+      return null
+    }
+  }
+
+
 
   render(){
     return(<div>SignupForm</div>)
