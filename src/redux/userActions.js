@@ -1,4 +1,4 @@
-// import { push } from 'react-router-redux'
+
 // ACTION CREATORS
 
 const URL = 'http://localhost:3000'
@@ -6,6 +6,7 @@ const URL = 'http://localhost:3000'
 const setUserLogin = user => ({type: 'SET_USER', user})
 const displayErrors = errors => ({type: 'ERRORS', errors})
 const clearUserAction = () => ({type: 'CLEAR_USER'})
+
 
 // FETCH
 export const persistUserFromAPI = user => dispatch => {
@@ -43,6 +44,23 @@ export const loginUserToDB = userData => dispatch => {
     }
   })
 }
+
+export const createNewUserToDB = userData => dispatch => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userData)
+  };
+  fetch(URL, config)
+    .then(res => res.json())
+    .then(data => {
+      dispatch(setUserAction(data.user));
+      localStorage.token = data.token;
+    });
+};
+
 
 export const logout = () => dispatch => {
   dispatch(clearUserAction())

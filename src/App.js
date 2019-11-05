@@ -3,12 +3,15 @@ import './App.css';
 import { persistUserFromAPI } from './redux/userActions'
 import { connect } from 'react-redux'
 
+import HomeContainer from './containers/HomeContainer'
 import MoodContainer from './containers/MoodContainer'
 import LoginForm from './components/LoginForm'
 import Slideshow from './components/Slideshow'
 import NavBar from './containers/NavBar'
+import Profile from './components/Profile'
 
-import { Route, Redirect } from 'react-router-dom'
+
+import { Route, Redirect, withRouter } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -47,18 +50,24 @@ render(){
         <div className="App" style={ stylesObj }>
           { this.showNavBar() }
           <Route exact
-            path='/login'
-            render={ this.handleLogin } />
+                 path='/profile'
+                 render={() => <Profile/>}/>
           <Route exact
-            path='/mood'
-            render={() =>
-              <MoodContainer/>
-            } />
+                 path='/home'
+                 render={() => <HomeContainer/>}/>
           <Route exact
-            path='/slideshow'
-            render={() =>
-              <Slideshow/>
-            } />
+                  path='/login'
+                  render={ this.handleLogin } />
+          <Route exact
+                  path='/mood'
+                  render={() =>
+                    <MoodContainer/>
+                  } />
+          <Route exact
+                 path='/slideshow'
+                 render={() =>
+                    <Slideshow/>
+                 } />
         </div>
       );
     }
