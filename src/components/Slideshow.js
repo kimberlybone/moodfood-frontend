@@ -15,28 +15,44 @@ class Slideshow extends React.Component {
     history.push(`/recipes/${ id }`)
   }
 
-  
+  displayRecipeName = () => {
+    const { recipes } = this.props
+    if(recipes.length > 0){
+      return recipes.map(recipe => {
+        return <p key={recipe.name}>{recipe.name}</p>
+      })
+    } else {
+      return <p> Loading your recipe's name...</p>
+    }
+  }
+
+  displayRecipeImage = () => {
+      const { recipes } = this.props
+    if(recipes.length > 0){
+      return recipes.map(recipe => {
+        return <img src={ recipe.image } alt='food' className='r-image'></img>
+      })
+    } else {
+      return <p> Loading your image...</p>
+    }
+  }
+
+  // displayRecipes = () => {
+  //   return recipes.map(recipe => {
+  //     return <RecipeCard  key={recipe.id} name={recipe.name} instructions={recipe.instructions} image={recipe.image}/>
+  //   })
+  // }
 
   render(){
     console.log(this.props.recipes)
     const { recipes, history } = this.props
     return(
       <div className='slideshow-div'>
-        {
-          recipes[0] ?
-          <p>{recipes[0].name}</p>
-          :
-          <p> Loading your recipe's name...</p>
-        }
+        { this.displayRecipeName() }
           <div>
             <button className='slideshow-btn'> Back </button>
             <button className='slideshow-btn'> View All Recipes </button>
-        {
-          recipes[0] ?
-          <img src={ recipes[0].image } alt='food' className='r-image'></img>
-          :
-          <p> Loading your image...</p>
-        }
+        { this.displayRecipeImage() }
             <button className='slideshow-btn' onClick={ null }> View This Recipe </button>
             <button className='slideshow-btn'> Next </button>
           </div>
