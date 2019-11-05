@@ -35,7 +35,30 @@ class SignupForm extends React.Component {
 
 
   render(){
-    return(<div>SignupForm</div>)
+
+    const { name, password, location, email } = this.state
+
+    return(
+      <div>
+        <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
+          { this.displayErrors() }
+          <p className='form-input'>
+            Username: <br></br> <input
+            type='text'
+            name='name'
+            className='form-input'
+            value={ name }
+            placeholder='Username'/></p>
+          <p className='form-input'>
+            Password: <br></br><input
+            type='password'
+            name='password'
+            className='form-input'
+            value={ password }
+            placeholder='Password'/></p>
+          <input className='form-btn' type='submit'></input>
+        </form>
+      </div>)
   }
 }
 const mapStateToProps = state => ({ errors: state.errors, user: state.user })
