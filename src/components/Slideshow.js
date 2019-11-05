@@ -1,15 +1,35 @@
 import React from 'react'
+import { fetchRecipes } from '../redux/recipeActions'
+import { connect } from 'react-redux'
 
 class Slideshow extends React.Component {
+
+  showRecipeName = () => {
+    const { recipes } = this.props
+    // return recipes.map(recipe => {
+    //   return <h4>{recipe.name}</h4>
+    // })
+  }
+
   render(){
+    // debugger
+    console.log(this.props.recipes.name)
+    const { recipes } = this.props
     return(
       <div className='slideshow-div'>
-        <p>Cook Time</p>
+        <p>{recipes[0].name}</p>
         <div>
-          <p>Image</p>
+          <img src={recipes[0].image} alt='food'></img>
         </div>
       </div>
     )
   }
 }
-export default Slideshow
+
+const mapStateToProps = state => ({ recipes: state.recipes })
+
+const mapDispatchToProps = {
+  fetchRecipes: fetchRecipes
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Slideshow);

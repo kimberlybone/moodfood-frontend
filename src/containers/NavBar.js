@@ -18,7 +18,7 @@ class NavBar extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ colors: state.colors, recipes: state.recipes })
+const mapStateToProps = state => ({ recipes: state.recipes })
 
 const mapDispatchToProps = {
   logout: logout

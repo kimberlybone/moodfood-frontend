@@ -3,8 +3,6 @@ export default (state = {}, { type, colors, recipes }) => {
   switch(type) {
     case 'COLOR':
       return colors
-    case 'RECIPE':
-      return recipes
     default:
       return state
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { clickToChangeColor, fetchRecipes } from '../redux/moodActions'
+import { clickToChangeColor } from '../redux/moodActions'
+import { fetchRecipes } from '../redux/recipeActions'
 import { connect } from 'react-redux'
 import '../Assets/MoodContainer.css'
 
@@ -15,7 +16,9 @@ import '../Assets/MoodContainer.css'
 // ]
 
 class MoodContainer extends React.Component {
-
+  componentDidMount() {
+    this.props.fetchRecipes()
+  }
 
 
   render(){

@@ -20,14 +20,13 @@ export const persistUserFromAPI = user => dispatch => {
 }
 
 
-
 export const loginUserToDB = userData => dispatch => {
-  console.log('fetching', userData);
   const config = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      'Authorization': localStorage.token
     },
     body: JSON.stringify(userData)
   }

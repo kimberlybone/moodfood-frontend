@@ -21,7 +21,7 @@ class App extends React.Component {
 
   handleLogin = () => {
     const { user } = this.props
-    if( user.name ){
+    if( localStorage.token ){
       return <Redirect to='/mood' />
     } else {
       return <LoginForm />
