@@ -19,7 +19,7 @@
   display: block;
   position: absolute;
   z-index: -1;
-  height: 90%;
+  height: 400px;
   width: 90%;
   left: 5%;
   right: 5%;
@@ -30,6 +30,10 @@
 }
 .r-image {
   width: 80%;
-  height: 60%;
+  height: auto;
+  border-radius: 20px;
+}
+.slideshow-btn {
   border-radius: 5px;
+  cursor: pointer;
 }

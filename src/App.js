@@ -23,11 +23,18 @@ class App extends React.Component {
   }
 
   handleLogin = () => {
-    // const { user } = this.props
     if( localStorage.token ){
       return <Redirect to='/mood' />
     } else {
       return <LoginForm />
+    }
+  }
+
+  handleSignup = () => {
+    if( localStorage.token ){
+      return <Redirect to='/mood' />
+    } else {
+      return <SignupForm />
     }
   }
 
@@ -51,7 +58,7 @@ render(){
           { this.showNavBar() }
           <Route exact
                  path='/signup'
-                 render={ () => <SignupForm/>} />
+                 render={ this.handleSignup } />
           <Route exact
                  path='/profile'
                  render={ () => <Profile/> }/>

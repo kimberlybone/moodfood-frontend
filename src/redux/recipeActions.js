@@ -13,7 +13,7 @@ export const fetchRecipes = recipes => dispatch => {
   fetch(recipeURL + '/recipes', config)
   .then(res => res.json())
   .then(recipes => {
-    // console.log(recipes)
+    console.log(recipes)
     dispatch(showRecipesForMood(recipes))
   })
 }
