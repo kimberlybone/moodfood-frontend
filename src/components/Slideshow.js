@@ -30,22 +30,15 @@ class Slideshow extends React.Component {
       const { recipes } = this.props
     if(recipes.length > 0){
       return recipes.map(recipe => {
-        return <img src={ recipe.image } alt='food' className='r-image'></img>
+        return <img src={ recipe.image } alt='food' className='r-image' key={`img-${recipe.id}`}></img>
       })
     } else {
       return <p> Loading your image...</p>
     }
   }
 
-  // displayRecipes = () => {
-  //   return recipes.map(recipe => {
-  //     return <RecipeCard  key={recipe.id} name={recipe.name} instructions={recipe.instructions} image={recipe.image}/>
-  //   })
-  // }
-
   render(){
     console.log(this.props.recipes)
-    const { recipes, history } = this.props
     return(
       <div className='slideshow-div'>
         { this.displayRecipeName() }
