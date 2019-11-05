@@ -50,6 +50,20 @@ class SignupForm extends React.Component {
             value={ name }
             placeholder='Username'/></p>
           <p className='form-input'>
+            Email: <br></br> <input
+            type='text'
+            name='name'
+            className='form-input'
+            value={ email }
+            placeholder='Username'/></p>
+          <p className='form-input'>
+            Location: <br></br> <input
+            type='text'
+            name='name'
+            className='form-input'
+            value={ location }
+            placeholder='Username'/></p>
+          <p className='form-input'>
             Password: <br></br><input
             type='password'
             name='password'

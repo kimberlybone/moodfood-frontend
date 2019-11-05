@@ -29,8 +29,6 @@ class NavBar extends React.Component {
 
 const mapStateToProps = state => ({ recipes: state.recipes })
 
-const mapDispatchToProps = {
-  logout: logout
-}
+const mapDispatchToProps = { logout }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

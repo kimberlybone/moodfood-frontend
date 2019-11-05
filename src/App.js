@@ -9,7 +9,7 @@ import LoginForm from './components/LoginForm'
 import Slideshow from './components/Slideshow'
 import NavBar from './containers/NavBar'
 import Profile from './components/Profile'
-
+import SignupForm from './components/SignupForm'
 
 import { Route, Redirect, withRouter } from 'react-router-dom'
 
@@ -50,24 +50,23 @@ render(){
         <div className="App" style={ stylesObj }>
           { this.showNavBar() }
           <Route exact
+                 path='/signup'
+                 render={ () => <SignupForm/>} />
+          <Route exact
                  path='/profile'
-                 render={() => <Profile/>}/>
+                 render={ () => <Profile/> }/>
           <Route exact
                  path='/home'
-                 render={() => <HomeContainer/>}/>
+                 render={ () => <HomeContainer/> }/>
           <Route exact
                   path='/login'
                   render={ this.handleLogin } />
           <Route exact
                   path='/mood'
-                  render={() =>
-                    <MoodContainer/>
-                  } />
+                  render={ () => <MoodContainer/> } />
           <Route exact
                  path='/slideshow'
-                 render={() =>
-                    <Slideshow/>
-                 } />
+                 render={ () => <Slideshow/> } />
         </div>
       );
     }
@@ -75,8 +74,6 @@ render(){
 
 const mapStateToProps = state => ({ user: state.user, colors: state.colors })
 
-const mapDispatchToProps = {
-  persistUserFromAPI: persistUserFromAPI
-}
+const mapDispatchToProps = { persistUserFromAPI }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
