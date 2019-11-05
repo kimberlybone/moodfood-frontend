@@ -10,7 +10,7 @@ class HomeContainer extends React.Component {
   }
 
   render(){
-    const { recipes } = this.props
+    // const { recipes } = this.props
 
     return(
       <div>

@@ -7,12 +7,12 @@ class Slideshow extends React.Component {
     this.props.fetchRecipes()
   }
 
-  showRecipeName = () => {
-    const { recipes } = this.props
+  // showRecipeName = () => {
+    // const { recipes } = this.props
     // return recipes.map(recipe => {
     //   return <h4>{recipe.name}</h4>
     // })
-  }
+  // }
 
   render(){
     console.log(this.props.recipes)

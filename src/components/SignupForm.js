@@ -2,7 +2,7 @@ import React from 'react'
 import '../Assets/AccountInfo.css'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
-import { createNewUserToDB } from './redux/userActions'
+import { createNewUserToDB } from '../redux/userActions'
 
 class SignupForm extends React.Component {
 
@@ -33,13 +33,12 @@ class SignupForm extends React.Component {
   }
 
 
-
   render(){
 
     const { name, password, location, email } = this.state
 
     return(
-      <div>
+      <div className='login-page'>
         <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
           { this.displayErrors() }
           <p className='form-input'>
@@ -52,17 +51,17 @@ class SignupForm extends React.Component {
           <p className='form-input'>
             Email: <br></br> <input
             type='text'
-            name='name'
+            name='email'
             className='form-input'
             value={ email }
-            placeholder='Username'/></p>
+            placeholder='Email'/></p>
           <p className='form-input'>
             Location: <br></br> <input
             type='text'
-            name='name'
+            name='location'
             className='form-input'
             value={ location }
-            placeholder='Username'/></p>
+            placeholder='Location'/></p>
           <p className='form-input'>
             Password: <br></br><input
             type='password'

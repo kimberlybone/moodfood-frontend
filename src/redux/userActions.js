@@ -3,7 +3,7 @@
 
 const URL = 'http://localhost:3000'
 
-const setUserLogin = user => ({type: 'SET_USER', user})
+const setUserAction = user => ({type: 'SET_USER', user})
 const displayErrors = errors => ({type: 'ERRORS', errors})
 const clearUserAction = () => ({type: 'CLEAR_USER'})
 
@@ -17,7 +17,7 @@ export const persistUserFromAPI = user => dispatch => {
     }
   })
   .then(res => res.json())
-  .then(user => dispatch(setUserLogin(user)))
+  .then(user => dispatch(setUserAction(user)))
 }
 
 
@@ -38,7 +38,7 @@ export const loginUserToDB = userData => dispatch => {
     if (!data.errors) {
       localStorage.token = data.token
       localStorage.id = data.user.id
-      dispatch(setUserLogin(data.user))
+      dispatch(setUserAction(data.user))
     } else {
       dispatch(displayErrors(data.errors))
     }
@@ -49,13 +49,15 @@ export const createNewUserToDB = userData => dispatch => {
   const config = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     },
     body: JSON.stringify(userData)
   };
-  fetch(URL, config)
+  fetch(URL + '/users', config)
     .then(res => res.json())
     .then(data => {
+      console.log('New User:', data)
       dispatch(setUserAction(data.user));
       localStorage.token = data.token;
     });

@@ -11,7 +11,7 @@ import NavBar from './containers/NavBar'
 import Profile from './components/Profile'
 import SignupForm from './components/SignupForm'
 
-import { Route, Redirect, withRouter } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   handleLogin = () => {
-    const { user } = this.props
+    // const { user } = this.props
     if( localStorage.token ){
       return <Redirect to='/mood' />
     } else {
