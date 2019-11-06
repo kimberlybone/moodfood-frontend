@@ -9,9 +9,9 @@
   border-radius: 15px;
   border: black;
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 20% 55% 25%;
   grid-template-areas:
-  'r-summary r-image';
+  'r-back-btn r-image r-next-btn';
 }
 
 .slideshow-div::before {

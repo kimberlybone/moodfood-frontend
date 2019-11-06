@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { persistUserFromAPI } from './redux/userActions'
 import { connect } from 'react-redux'
+import ReactNotifications from 'react-notifications-component';
 
 import HomeContainer from './containers/HomeContainer'
 import MoodContainer from './containers/MoodContainer'
@@ -56,6 +57,7 @@ render(){
     return (
         <div className="App" style={ stylesObj }>
           { this.showNavBar() }
+          <ReactNotifications/>
           <Route exact
                  path='/signup'
                  render={ this.handleSignup } />

@@ -10,18 +10,12 @@ class Slideshow extends React.Component {
     index: 0
   }
 
-  // showLimitedRecipes = () => {
-  //   const { recipes } = this.props
-  //   return recipes.slice(this.state.index, this.state.index + 1)
-  // }
-
   moreRecipes = () => {
     const { props: { recipes }, state: { index } } = this
     const increaseIndex = index + 1
     const newRecipeLength = recipes.length - 1
 
     if( index < newRecipeLength ){
-      debugger
       this.setState({
         index: increaseIndex
       })
@@ -84,12 +78,16 @@ class Slideshow extends React.Component {
     console.log(this.props.recipes)
     return(
       <div className='slideshow-div'>
-        { this.displayRecipeName() }
+        <div>
+          <button className='slideshow-btn' onClick={ () => this.lessRecipes() }> Back </button>
+        </div>
           <div>
-            <button className='slideshow-btn' onClick={ () => this.lessRecipes() }> Back </button>
             <button className='slideshow-btn'> View All Recipes </button>
         { this.displayRecipeImage() }
+        { this.displayRecipeName() }
             <button className='slideshow-btn' onClick={ null }> View This Recipe </button>
+          </div>
+          <div>
             <button className='slideshow-btn' onClick={ () => this.moreRecipes()}> Next </button>
           </div>
       </div>

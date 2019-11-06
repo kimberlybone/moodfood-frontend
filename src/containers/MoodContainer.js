@@ -5,15 +5,10 @@ import { fetchRecipes } from '../redux/recipeActions'
 import { connect } from 'react-redux'
 import '../Assets/MoodContainer.css'
 
-// const colorArray = [
-//   "red",
-//   "lightblue",
-//   "pink",
-//   "orange",
-//   "yellow",
-//   "rosybrown",
-//   "magenta"
-// ]
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css';
+
 
 class MoodContainer extends React.Component {
   componentDidMount() {
@@ -29,7 +24,20 @@ class MoodContainer extends React.Component {
       <div>
         <h1>How are you feeling today...</h1>
         <div className='emotions'>
-          <p onClick={e => clickToChangeColor(e)}><NavLink name='lightyellow' to='/slideshow'>Adventurous|Curious</NavLink></p>
+          <p onClick={e => {
+                store.addNotification({
+                title: 'ADVENTUROUS | CURIOUS',
+                message: 'Here are some recipes to fulfill your ADVENTUROUS mood!',
+                type: 'default',                         // 'default', 'success', 'info', 'warning'
+                container: 'bottom-left',                // where to position the notifications
+                animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
+                animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
+                dismiss: {
+                  duration: 5000
+                }
+              })
+              clickToChangeColor(e)
+            }}><NavLink name='lightyellow' to='/slideshow'>Adventurous|Curious</NavLink></p>
           <p onClick={e => clickToChangeColor(e)}><NavLink name='red' to='/slideshow'>Angry|Tense</NavLink></p>
           <p onClick={e => clickToChangeColor(e)}><NavLink name='orange' to='/slideshow'>Anxious|Stressed</NavLink></p>
           <p onClick={e => clickToChangeColor(e)}><NavLink name='lightblue' to='/slideshow'>Calm</NavLink></p>
