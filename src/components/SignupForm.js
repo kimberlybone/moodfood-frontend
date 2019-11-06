@@ -16,9 +16,10 @@ class SignupForm extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   handleSubmit = e => {
-    const { createNewUserToDB } = this.props
+    const { createNewUserToDB, history } = this.props
     e.preventDefault()
     createNewUserToDB(this.state)
+    history.push('/mood')
   }
 
   displayErrors = () => {
