@@ -57,9 +57,13 @@ export const createNewUserToDB = userData => dispatch => {
   fetch(URL + '/users', config)
     .then(res => res.json())
     .then(data => {
-      console.log('New User:', data)
-      dispatch(setUserAction(data.user));
-      localStorage.token = data.token;
+      if(!data.errors){
+        console.log('New User:', data)
+        dispatch(setUserAction(data.user));
+        localStorage.token = data.token;
+      } else {
+        dispatch(displayErrors(data.errors))
+      }
     });
 };
 

@@ -59,6 +59,7 @@ class Slideshow extends React.Component {
       return <p> Loading your recipe's name...</p>
     }
   }
+// do switch statement for slideshow moods comparing to slug
 
   displayRecipeImage = () => {
     const { recipes } = this.props
@@ -74,6 +75,7 @@ class Slideshow extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     const { props: { recipes }, state: { index } } = this
     const correctIndex = index + 1
 
@@ -86,7 +88,7 @@ class Slideshow extends React.Component {
             <button className='slideshow-btn'> View All Recipes </button>
         { this.displayRecipeImage() }
         { this.displayRecipeName() }
-        { correctIndex } of { recipes.length }
+        <p>{ correctIndex } of { recipes.length }</p>
             <button className='slideshow-btn' onClick={ null }> View This Recipe </button>
           </div>
           <div>

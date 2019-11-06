@@ -41,7 +41,7 @@ class App extends React.Component {
 
   showNavBar = () => {
     const { user } = this.props
-    if( user.name ){
+    if( localStorage.token ){
       return <NavBar/>
     } else {
       return <LoginForm />
@@ -49,6 +49,7 @@ class App extends React.Component {
   }
 
 render(){
+  console.log(this.props.user)
 
     const stylesObj = {
       background: this.props.colors
@@ -74,14 +75,17 @@ render(){
                   path='/mood'
                   render={ () => <MoodContainer/> } />
           <Route exact
-                 path='/slideshow'
-                 render={ () => <Slideshow/> } />
+                 path='/slideshow/:slug'
+                 render={ (props) => <Slideshow {...props}/> } />
         </div>
       );
     }
   }
 
-const mapStateToProps = state => ({ user: state.user, colors: state.colors })
+const mapStateToProps = state => {
+  console.log(state);
+  return { user: state.user, colors: state.colors }
+}
 
 const mapDispatchToProps = { persistUserFromAPI }
 
