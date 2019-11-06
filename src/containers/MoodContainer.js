@@ -18,7 +18,6 @@ class MoodContainer extends React.Component {
 
   render(){
     const { clickToChangeColor } = this.props
-    // console.log(this.props)
 
     return(
       <div>

@@ -17,13 +17,19 @@ class SignupForm extends React.Component {
 
   handleSubmit = e => {
     const { createNewUserToDB, history } = this.props
+
     e.preventDefault()
     createNewUserToDB(this.state)
-    history.push('/mood')
+    if(localStorage.token){
+      history.push('/mood')
+    } else {
+      return null
+    }
   }
 
   displayErrors = () => {
     const { errors } = this.props
+
     if(errors){
       return errors.map(error => {
         return <li key={error}>{error}</li>

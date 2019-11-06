@@ -65,7 +65,6 @@ class Slideshow extends React.Component {
 
     if(recipes.length > 0){
       let limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
-      // debugger
       return limitedRecipes.map(recipe => {
         return <img src={ recipe.image } alt='food' className='r-image' key={`img- ${recipe.id}`}></img>
       })
@@ -75,7 +74,9 @@ class Slideshow extends React.Component {
   }
 
   render(){
-    console.log(this.props.recipes)
+    const { props: { recipes }, state: { index } } = this
+    const correctIndex = index + 1
+
     return(
       <div className='slideshow-div'>
         <div>
@@ -85,6 +86,7 @@ class Slideshow extends React.Component {
             <button className='slideshow-btn'> View All Recipes </button>
         { this.displayRecipeImage() }
         { this.displayRecipeName() }
+        { correctIndex } of { recipes.length }
             <button className='slideshow-btn' onClick={ null }> View This Recipe </button>
           </div>
           <div>
