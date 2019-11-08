@@ -1,4 +1,4 @@
-const showRecipesForMood = recipes => ({ type: 'RECIPE', recipes })
+const showRecipesForMood = recipes => ({ type: 'RECIPES', recipes })
 
 const recipeURL = 'http://localhost:3000'
 
@@ -8,7 +8,6 @@ export const fetchRecipes = recipes => dispatch => {
       'Content-Type': 'application/json',
       'Authorization': localStorage.token
     }
-    // body: JSON.stringify(recipes)
   }
   fetch(recipeURL + '/recipes', config)
   .then(res => res.json())

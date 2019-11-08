@@ -1,7 +1,7 @@
 export default (state = [], { type, recipes }) => {
   // console.log({type, recipes});
   switch(type) {
-    case 'RECIPE':
+    case 'RECIPES':
       return recipes
     default:
       return state
