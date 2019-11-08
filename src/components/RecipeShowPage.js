@@ -16,14 +16,22 @@ class RecipeShowPage extends React.Component {
     console.log(recipe)
     return(
       <div className='recipe-page'>
-        { recipe.image ?
+        {
+          recipe.image ?
           <img src={ recipe.image } alt='food' className='recipe-img'></img>
           :
-          <p>Loading your image...</p>
-
+          <p> Loading your image... </p>
         }
         <div>
-        {recipe.name}
+        <h2> { recipe.name } </h2>
+
+        {
+          recipe.instructions ?
+          <p> { recipe.instructions } </p>
+          :
+          <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
+        }
+
         </div>
       </div>
     )

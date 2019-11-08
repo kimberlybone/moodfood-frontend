@@ -18,10 +18,12 @@ class NavBar extends React.Component {
     return(
       <div>
         <h1> Mood & Food </h1>
-        <NavLink to='/profile'> Profile </NavLink >
-        <NavLink to='/slideshow/:slug' className='nav-btn'> | My Slideshow </NavLink>
-        <NavLink to='/home' className='nav-btn' onClick={this.goHome}> | Home |</NavLink>
-        <NavLink to='/login' className='nav-btn' onClick={logout}>  Logout | </NavLink>
+        <p>
+          <NavLink to='/profile'> Profile </NavLink >
+          <NavLink to='/slideshow/:slug' className='nav-btn'> | My Slideshow </NavLink>
+          <NavLink to='/home' className='nav-btn' onClick={this.goHome}> | Home |</NavLink>
+          <NavLink to='/login' className='nav-btn' onClick={logout}>  Logout | </NavLink>
+        </p>
       </div>
     )
   }
