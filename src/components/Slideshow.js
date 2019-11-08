@@ -73,11 +73,11 @@ class Slideshow extends React.Component {
         return <img src={ recipe.image }
                     name={ recipe.id }
                     alt='food'
-                    className='r-image'
+                    className='slideshow-img'
                     onClick={ e => this.onImageClick(e)}
                     key={`img- ${recipe.id}`}></img>
       })
-      
+
     } else {
       return <p> Loading your image...</p>
     }
@@ -109,7 +109,7 @@ class Slideshow extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ recipes: state.recipes })
+const mapStateToProps = state => ({ recipes: state.recipes.allRecipes })
 
 const mapDispatchToProps = {
   fetchRecipes: fetchRecipes,

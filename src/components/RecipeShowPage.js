@@ -12,19 +12,24 @@ class RecipeShowPage extends React.Component {
 
 
   render(){
-    console.log(this.props)
+    const { recipe } = this.props
+    console.log(recipe)
     return(
-      <div className='recipe-card'>
-      Recipe Image
+      <div className='recipe-page'>
+        { recipe.image ?
+          <img src={ recipe.image } alt='food' className='recipe-img'></img>
+          :
+          <p>Loading your image...</p>
+
+        }
         <div>
-        <p>-------------</p>
-        Recipe Title
+        {recipe.name}
         </div>
       </div>
     )
   }
 }
-const mapStateToProps = state => ({ recipe: state })
+const mapStateToProps = state => ({ recipe: state.recipes.currentRecipe })
 
 const mapDispatchToProps = { fetchRecipes: fetchRecipes, fetchIndividualRecipe: fetchIndividualRecipe }
 

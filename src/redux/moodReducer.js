@@ -1,5 +1,5 @@
-export default (state = {}, { type, colors, recipe }) => {
-  console.log({type, colors, recipe});
+export default (state = {}, { type, colors }) => {
+  // console.log({type, colors });
   switch(type) {
     case 'COLOR':
       return colors
