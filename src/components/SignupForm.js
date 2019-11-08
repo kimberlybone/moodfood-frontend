@@ -20,11 +20,7 @@ class SignupForm extends React.Component {
 
     e.preventDefault()
     createNewUserToDB(this.state)
-    if(localStorage.token){
       history.push('/mood')
-    } else {
-      return null
-    }
   }
 
   displayErrors = () => {

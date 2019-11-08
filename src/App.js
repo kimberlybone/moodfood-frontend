@@ -11,6 +11,7 @@ import Slideshow from './components/Slideshow'
 import NavBar from './containers/NavBar'
 import Profile from './components/Profile'
 import SignupForm from './components/SignupForm'
+import RecipeShowPage from './components/RecipeShowPage'
 
 import { Route, Redirect } from 'react-router-dom'
 
@@ -23,60 +24,62 @@ class App extends React.Component {
     }
   }
 
-  handleLogin = () => {
-    if( localStorage.token ){
-      return <Redirect to='/mood' />
-    } else {
-      return <LoginForm />
-    }
-  }
+  // handleLogin = () => {
+  //     return <Redirect to='/mood' />
+  // }
 
-  handleSignup = () => {
-    if( localStorage.token ){
-      return <Redirect to='/mood' />
-    } else {
-      return <SignupForm />
-    }
-  }
+  // handleSignup = () => {
+  //   if( localStorage.token ){
+  //     return <Redirect to='/mood' />
+  //   } else {
+  //     return <SignupForm />
+  //   }
+  // }
+
+  // if recipes.message === 'Please Log In' redirect to <NotFound/>
 
   showNavBar = () => {
-    const { user } = this.props
-    if( localStorage.token ){
       return <NavBar/>
-    } else {
-      return <LoginForm />
-    }
   }
 
 render(){
   console.log(this.props.user)
 
     const stylesObj = {
-      background: this.props.colors
+      background: localStorage.color
     };
 
     return (
         <div className="App" style={ stylesObj }>
-          { this.showNavBar() }
-          <ReactNotifications/>
-          <Route exact
-                 path='/signup'
-                 render={ this.handleSignup } />
-          <Route exact
-                 path='/profile'
-                 render={ () => <Profile/> }/>
-          <Route exact
-                 path='/home'
-                 render={ () => <HomeContainer/> }/>
-          <Route exact
-                  path='/login'
-                  render={ this.handleLogin } />
-          <Route exact
-                  path='/mood'
-                  render={ () => <MoodContainer/> } />
-          <Route exact
-                 path='/slideshow/:slug'
-                 render={ (props) => <Slideshow {...props}/> } />
+          { localStorage.token ?
+            this.showNavBar()
+            :
+            null
+          }
+          <div >
+            <ReactNotifications/>
+            <Route exact
+              path='/recipes/:id'
+              render={() => <RecipeShowPage />}/>
+            <Route exact
+              path='/signup'
+              render={ () => <SignupForm/> } />
+            <Route exact
+              path='/profile'
+              render={ () => <Profile/> }/>
+            <Route exact
+              path='/home'
+              render={ () => <HomeContainer/> }/>
+            <Route exact
+              path='/login'
+              render={ () => <LoginForm/> } />
+            <Route exact
+              path='/mood'
+              render={ () => <MoodContainer/> } />
+            <Route exact
+              path='/slideshow/:slug'
+              render={ () => <Slideshow /> } />
+          </div>
         </div>
       );
     }

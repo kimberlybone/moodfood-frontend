@@ -5,6 +5,7 @@ const changeColor = colors => ({ type: 'COLOR', colors })
 
 export const clickToChangeColor = e => dispatch => {
   dispatch(changeColor(e.target.name))
+  localStorage.color = e.target.name
 }
 
 // export const fetchRecipes = recipes => dispatch => {

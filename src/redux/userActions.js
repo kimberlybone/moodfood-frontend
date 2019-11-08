@@ -13,7 +13,7 @@ export const persistUserFromAPI = user => dispatch => {
   fetch(URL + `/users/${localStorage.id}`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.token
+      'Authorization': localStorage.token
     }
   })
   .then(res => res.json())
@@ -61,6 +61,7 @@ export const createNewUserToDB = userData => dispatch => {
         console.log('New User:', data)
         dispatch(setUserAction(data.user));
         localStorage.token = data.token;
+        localStorage.id = data.user.id
       } else {
         dispatch(displayErrors(data.errors))
       }
@@ -72,7 +73,3 @@ export const logout = () => dispatch => {
   dispatch(clearUserAction())
   localStorage.clear()
 }
-
-// const createNewUserToDB = userData => dispatch => {
-//
-// }

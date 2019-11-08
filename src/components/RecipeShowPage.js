@@ -3,7 +3,7 @@ import { fetchRecipes } from '../redux/recipeActions'
 import { connect } from 'react-redux'
 import '../Assets/HomeContainer.css'
 
-class RecipeCard extends React.Component {
+class RecipeShowPage extends React.Component {
 
   // create action to fetch to the show page in backend
   render(){
@@ -22,4 +22,4 @@ const mapStateToProps = state => ({ recipes: state.recipes })
 
 const mapDispatchToProps = { fetchRecipes }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeCard);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeShowPage);

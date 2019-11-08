@@ -41,31 +41,31 @@ class MoodContainer extends React.Component {
               to='/slideshow/adventurous'>Adventurous|Curious</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                       name='red'
-                      to='/slideshow'>Angry|Tense</NavLink></p>
+                      to='/slideshow/angry'>Angry|Tense</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                        name='orange'
-                       to='/slideshow'>Anxious|Stressed</NavLink></p>
+                       to='/slideshow/anxious'>Anxious|Stressed</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                        name='lightblue'
-                       to='/slideshow'>Calm</NavLink></p>
+                       to='/slideshow/calm'>Calm</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                         name='lightgreen'
-                        to='/slideshow'>Happy|Energetic</NavLink></p>
+                        to='/slideshow/happy'>Happy|Energetic</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                        name='magenta'
-                       to='/slideshow'>Indifferent</NavLink></p>
+                       to='/slideshow/indifferent'>Indifferent</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                        name='rosybrown'
                        to='/slideshow'></NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                       name='lightpink'
-                      to='/slideshow'>Romantic</NavLink></p>
+                      to='/slideshow/romantic'>Romantic</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                       name='purple'
-                      to='/slideshow'>Sad</NavLink></p>
+                      to='/slideshow/sad'>Sad</NavLink></p>
           <p><NavLink onClick={e => clickToChangeColor(e)}
                       name='white'
-                      to='/slideshow'>Just Hungry</NavLink></p>
+                      to='/slideshow/hungry'>Just Hungry</NavLink></p>
         </div>
       </div>)
   }

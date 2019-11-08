@@ -13,9 +13,10 @@ class LoginForm extends React.Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   handleSubmit = e => {
-    const { loginUserToDB } = this.props
+    const { loginUserToDB, history } = this.props
     e.preventDefault()
     loginUserToDB(this.state)
+    history.push('/mood')
   }
   // componentDidUpdate(prevProps, prevState) {
   //   const { user, history } = this.props

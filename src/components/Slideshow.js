@@ -41,16 +41,17 @@ class Slideshow extends React.Component {
     this.props.fetchRecipes()
   }
 
-  viewRecipe = id => {
+  viewRecipe = () => {
     const { history, recipes } = this.props
-    history.push(`/recipes/${ id }`)
+    return recipes.map(recipe => {
+      return history.push(`/recipes/${ recipe.id }`)
+    })
   }
 
   displayRecipeName = () => {
     const { recipes } = this.props
 
     if(recipes.length > 0){
-      // debugger
       const limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
       return limitedRecipes.map(recipe => {
         return <p key={recipe.name}>{recipe.name}</p>
@@ -74,6 +75,10 @@ class Slideshow extends React.Component {
     }
   }
 
+  onImageClick = e => {
+    
+  }
+
   render(){
     console.log(this.props);
     const { props: { recipes }, state: { index } } = this
@@ -89,7 +94,7 @@ class Slideshow extends React.Component {
         { this.displayRecipeImage() }
         { this.displayRecipeName() }
         <p>{ correctIndex } of { recipes.length }</p>
-            <button className='slideshow-btn' onClick={ null }> View This Recipe </button>
+            <button className='slideshow-btn' onClick={ () => this.viewRecipe() }> View This Recipe </button>
           </div>
           <div>
             <button className='slideshow-btn' onClick={ () => this.moreRecipes()}> Next </button>

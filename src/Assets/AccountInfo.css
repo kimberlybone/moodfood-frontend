@@ -1,13 +1,15 @@
 .login-page {
   background: url('../Assets/food-background.jpg') no-repeat fixed;
-  /* max-width: 100%; */
+  width: 100%;
   background-size: cover;
-  min-height: 100%;
-  min-width: 100%;
-  /* height: 100vh; */
+  /* min-height: 100%;
+  min-width: 100%; */
+  height: 100vh;
+  /* overflow: hidden; */
   position: absolute;
   padding-top: 40vh;
-  padding-left: 30vh;
+  /* padding-left: 30vh; */
+  /* margin: auto; */
 }
 
 .login-form {
@@ -25,9 +27,12 @@
   left: 5%;
   right: 5%;
   box-shadow: 0 10px 50px rgba(0,0,0,0.4);
+  /* padding-top:  */
   padding-left: 5vh;
   padding-right: 5vh;
   padding-bottom: 10vh;
+  margin: auto;
+  /* margin-top: 50%; */
 }
 
 .form-input {

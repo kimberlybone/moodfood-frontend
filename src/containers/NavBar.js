@@ -19,7 +19,7 @@ class NavBar extends React.Component {
       <div>
         <h1> Mood & Food </h1>
         <NavLink to='/profile'> Profile </NavLink >
-        <NavLink to='/slideshow' className='nav-btn'> | My Slideshow </NavLink>
+        <NavLink to='/slideshow/:slug' className='nav-btn'> | My Slideshow </NavLink>
         <NavLink to='/home' className='nav-btn' onClick={this.goHome}> | Home |</NavLink>
         <NavLink to='/login' className='nav-btn' onClick={logout}>  Logout | </NavLink>
       </div>
