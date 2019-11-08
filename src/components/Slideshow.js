@@ -40,6 +40,7 @@ class Slideshow extends React.Component {
 
   componentDidMount() {
     this.props.fetchRecipes()
+    // this.props.clickToGoToRecipePage()
   }
 
   viewRecipe = () => {
@@ -62,6 +63,9 @@ class Slideshow extends React.Component {
     }
   }
 // do switch statement for slideshow moods comparing to slug
+  onImageClick = e => {
+    console.log('Hello')
+  }
 
   displayRecipeImage = () => {
     const { recipes } = this.props
@@ -69,16 +73,18 @@ class Slideshow extends React.Component {
     if(recipes.length > 0){
       let limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
       return limitedRecipes.map(recipe => {
-        return <img src={ recipe.image } name='image' alt='food' className='r-image' key={`img- ${recipe.id}`}></img>
+        return <img src={ recipe.image }
+                    name='image'
+                    alt='food'
+                    className='r-image'
+                    onClick={ e => this.onImageClick(e)}
+                    key={`img- ${recipe.id}`}></img>
       })
     } else {
       return <p> Loading your image...</p>
     }
   }
 
-  // onImageClick = e => {
-  //   e.target
-  // }
 
   render(){
     console.log(this.props);
