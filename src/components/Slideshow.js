@@ -76,7 +76,7 @@ class Slideshow extends React.Component {
   }
 
   onImageClick = e => {
-    
+    e.target
   }
 
   render(){
