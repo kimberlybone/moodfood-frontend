@@ -1,10 +1,10 @@
-export default (state = { allRecipes: [], currentRecipe: {} }, { type, recipeInfo }) => {
-  // console.log({type, recipes});
-  switch(type) {
+export default (state = { allRecipes: [], currentRecipe: {} }, action ) => {
+  console.log(action);
+  switch(action.type) {
     case 'RECIPES':
-      return { ...state, allRecipes: recipeInfo }
+      return { ...state, allRecipes: action.recipes }
     case 'RECIPE':
-      return { ...state, currentRecipe: recipeInfo }
+      return { ...state, currentRecipe: action.recipe }
     default:
       return state
   }

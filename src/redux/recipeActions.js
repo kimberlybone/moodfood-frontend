@@ -1,5 +1,5 @@
 const showRecipesForMood = recipes => ({ type: 'RECIPES', recipes })
-const getIndividualRecipe = recipe => ({ type: 'RECIPE', recipe})
+const getIndividualRecipe = recipe => ({ type: 'RECIPE', recipe })
 
 const recipeURL = 'http://localhost:3000'
 

@@ -24,7 +24,7 @@ class RecipeShowPage extends React.Component {
     )
   }
 }
-const mapStateToProps = state => ({ recipe: state.recipes.recipe })
+const mapStateToProps = state => ({ recipe: state })
 
 const mapDispatchToProps = { fetchRecipes: fetchRecipes, fetchIndividualRecipe: fetchIndividualRecipe }
 
