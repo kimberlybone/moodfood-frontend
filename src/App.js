@@ -50,7 +50,7 @@ render(){
 
     return (
         <div className="App" style={ stylesObj }>
-          { localStorage.token ?
+          { localStorage.token && this.props.location.pathname !== '/mood' ?
             this.showNavBar()
             :
             null

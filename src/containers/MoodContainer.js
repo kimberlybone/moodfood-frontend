@@ -11,9 +11,9 @@ import 'animate.css';
 
 
 class MoodContainer extends React.Component {
-  componentDidMount() {
-    this.props.fetchRecipes()
-  }
+  // componentDidMount() {
+  //   this.props.fetchRecipes()
+  // }
 
 
   render(){
