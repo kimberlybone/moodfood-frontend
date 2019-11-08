@@ -1,5 +1,6 @@
 import React from 'react'
 import { fetchRecipes } from '../redux/recipeActions'
+import { clickToGoToRecipePage } from '../redux/moodActions'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import '../Assets/MoodContainer.css'
@@ -107,7 +108,8 @@ class Slideshow extends React.Component {
 const mapStateToProps = state => ({ recipes: state.recipes })
 
 const mapDispatchToProps = {
-  fetchRecipes: fetchRecipes
+  fetchRecipes: fetchRecipes,
+  clickToGoToRecipePage: clickToGoToRecipePage
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Slideshow));

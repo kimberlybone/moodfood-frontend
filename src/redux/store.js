@@ -16,7 +16,7 @@ const reducer = combineReducers({
   routing: routerReducer,
   user: userReducer,
   errors: errorReducer,
-  colors: moodReducer,
+  mood: moodReducer,
   recipes: recipeReducer
 })
 
