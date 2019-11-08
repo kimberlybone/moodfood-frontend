@@ -43,7 +43,6 @@ class App extends React.Component {
   }
 
 render(){
-  console.log(this.props.user)
 
     const stylesObj = {
       background: localStorage.color
@@ -60,7 +59,7 @@ render(){
             <ReactNotifications/>
             <Route exact
               path='/recipes/:id'
-              render={() => <RecipeShowPage />}/>
+              render={(renderProps) => <RecipeShowPage info={renderProps}/>}/>
             <Route exact
               path='/signup'
               render={ () => <SignupForm/> } />
@@ -86,7 +85,7 @@ render(){
   }
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return { user: state.user, colors: state.colors }
 }
 

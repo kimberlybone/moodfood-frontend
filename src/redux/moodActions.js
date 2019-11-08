@@ -1,5 +1,5 @@
 const changeColor = colors => ({ type: 'COLOR', colors })
-const goToRecipePage = recipe => ({ type: 'RECIPE', recipe })
+// const goToRecipePage = recipe => ({ type: 'RECIPE', recipe })
 
 
 export const clickToChangeColor = e => dispatch => {
@@ -7,6 +7,6 @@ export const clickToChangeColor = e => dispatch => {
   localStorage.color = e.target.name
 }
 
-export const clickToGoToRecipePage = e => dispatch => {
-  dispatch(goToRecipePage(e.target.name))
-}
+// export const clickToGoToRecipePage = e => dispatch => {
+//   dispatch(goToRecipePage(e.target.name))
+// }

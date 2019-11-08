@@ -1,6 +1,6 @@
 import React from 'react'
 import { fetchRecipes } from '../redux/recipeActions'
-import { clickToGoToRecipePage } from '../redux/moodActions'
+// import { clickToGoToRecipePage } from '../redux/moodActions'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import '../Assets/MoodContainer.css'
@@ -9,6 +9,10 @@ class Slideshow extends React.Component {
 
   state = {
     index: 0
+  }
+
+  componentDidMount() {
+    this.props.fetchRecipes()
   }
 
   moreRecipes = () => {
@@ -38,16 +42,10 @@ class Slideshow extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.fetchRecipes()
-    // this.props.clickToGoToRecipePage()
-  }
 
-  viewRecipe = () => {
-    const { history, recipes } = this.props
-    return recipes.map(recipe => {
-      return history.push(`/recipes/${ recipe.id }`)
-    })
+  onImageClick = e => {
+    const { history } = this.props
+      return history.push(`/recipes/${ e.target.name }`)
   }
 
   displayRecipeName = () => {
@@ -62,10 +60,9 @@ class Slideshow extends React.Component {
       return <p> Loading your recipe's name...</p>
     }
   }
+
 // do switch statement for slideshow moods comparing to slug
-  onImageClick = e => {
-    console.log('Hello')
-  }
+
 
   displayRecipeImage = () => {
     const { recipes } = this.props
@@ -74,12 +71,13 @@ class Slideshow extends React.Component {
       let limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
       return limitedRecipes.map(recipe => {
         return <img src={ recipe.image }
-                    name='image'
+                    name={ recipe.id }
                     alt='food'
                     className='r-image'
                     onClick={ e => this.onImageClick(e)}
                     key={`img- ${recipe.id}`}></img>
       })
+      
     } else {
       return <p> Loading your image...</p>
     }
@@ -87,7 +85,7 @@ class Slideshow extends React.Component {
 
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     const { props: { recipes }, state: { index } } = this
     const correctIndex = index + 1
 
@@ -115,7 +113,7 @@ const mapStateToProps = state => ({ recipes: state.recipes })
 
 const mapDispatchToProps = {
   fetchRecipes: fetchRecipes,
-  clickToGoToRecipePage: clickToGoToRecipePage
+  // clickToGoToRecipePage: clickToGoToRecipePage
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Slideshow));
