@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { clickToChangeColor } from '../redux/moodActions'
-import { fetchRecipes } from '../redux/recipeActions'
+// import { fetchRecipes } from '../redux/recipeActions'
 import { connect } from 'react-redux'
 import '../Assets/MoodContainer.css'
 
@@ -25,7 +25,7 @@ class MoodContainer extends React.Component {
         <div className='emotions'>
           <p><NavLink onClick={e => {
                   store.addNotification({
-                  title: 'ADVENTUROUS | CURIOUS',
+                  title: 'ADVENTUROUS',
                   message: 'Here are some recipes to fulfill your ADVENTUROUS mood!',
                   type: 'default',                         // 'default', 'success', 'info', 'warning'
                   container: 'bottom-left',                // where to position the notifications
@@ -35,35 +35,32 @@ class MoodContainer extends React.Component {
                     duration: 5000
                   }
                 })
-                clickToChangeColor(e)
+                clickToChangeColor(e, 'Adventurous')
               }}
               name='lightyellow'
-              to='/slideshow/adventurous'>Adventurous|Curious</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+              to='/slideshow/adventurous'>Adventurous</NavLink></p>
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Angry')}
                       name='red'
-                      to='/slideshow/angry'>Angry|Tense</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+                      to='/slideshow/angry'>Angry</NavLink></p>
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Anxious')}
                        name='orange'
-                       to='/slideshow/anxious'>Anxious|Stressed</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+                       to='/slideshow/anxious'>Anxious</NavLink></p>
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Calm')}
                        name='lightblue'
                        to='/slideshow/calm'>Calm</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
-                        name='lightgreen'
-                        to='/slideshow/happy'>Happy|Energetic</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Happy')}
+                      name='lightgreen'
+                      to='/slideshow/happy'>Happy</NavLink></p>
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Stressed')}
                        name='magenta'
-                       to='/slideshow/indifferent'>Indifferent</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
-                       name='rosybrown'
-                       to='/slideshow'></NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+                       to='/slideshow/indifferent'>Stressed</NavLink></p>
+            <p><NavLink onClick={e => clickToChangeColor(e, 'Romantic')}
                       name='lightpink'
                       to='/slideshow/romantic'>Romantic</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+           <p><NavLink onClick={e => clickToChangeColor(e, 'Sad')}
                       name='purple'
                       to='/slideshow/sad'>Sad</NavLink></p>
-          <p><NavLink onClick={e => clickToChangeColor(e)}
+           <p><NavLink onClick={e => clickToChangeColor(e, 'Indifferent')}
                       name='white'
                       to='/slideshow/hungry'>Just Hungry</NavLink></p>
         </div>
@@ -75,7 +72,7 @@ const mapStateToProps = state => ({ colors: state.colors, recipes: state.recipes
 
 const mapDispatchToProps = {
   clickToChangeColor: clickToChangeColor,
-  fetchRecipes: fetchRecipes
+  // fetchRecipes: fetchRecipes
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoodContainer);

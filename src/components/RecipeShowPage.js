@@ -13,7 +13,7 @@ class RecipeShowPage extends React.Component {
 
   render(){
     const { recipe } = this.props
-    console.log(recipe)
+    console.log(this.props)
     return(
       <div className='recipe-page'>
         {
@@ -23,7 +23,8 @@ class RecipeShowPage extends React.Component {
           <p> Loading your image... </p>
         }
         <div>
-        <h2> { recipe.name } </h2>
+        <h3> Feeling { localStorage.mood }?</h3>
+        <h2> Try { recipe.name } </h2>
 
         {
           recipe.instructions ?
@@ -37,7 +38,7 @@ class RecipeShowPage extends React.Component {
     )
   }
 }
-const mapStateToProps = state => ({ recipe: state.recipes.currentRecipe })
+const mapStateToProps = state => ({ recipe: state.recipes.currentRecipe, mood: state.recipes.mood })
 
 const mapDispatchToProps = { fetchRecipes: fetchRecipes, fetchIndividualRecipe: fetchIndividualRecipe }
 

@@ -85,7 +85,6 @@ render(){
   }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return { user: state.user, colors: state.colors }
 }
 

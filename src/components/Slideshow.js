@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchRecipes } from '../redux/recipeActions'
+import { fetchRecipesByMood } from '../redux/recipeActions'
 // import { clickToGoToRecipePage } from '../redux/moodActions'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -12,11 +12,50 @@ class Slideshow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchRecipes()
+    const { match: {params: {slug}}, fetchRecipesByMood } = this.props
+    // console.log(slug);
+    switch (slug){
+      case "adventurous":
+      fetchRecipesByMood('Adventurous')
+      localStorage.mood = "adventurous"
+      break
+      case "angry":
+      fetchRecipesByMood('Angry')
+      localStorage.mood = "angry"
+      break
+      case "anxious":
+      fetchRecipesByMood('Anxious')
+      localStorage.mood = "anxious"
+      break
+      case "calm":
+      fetchRecipesByMood('Calm')
+      localStorage.mood = "calm"
+      break
+      case "happy":
+      fetchRecipesByMood('Happy')
+      localStorage.mood = "happy"
+      break
+      case "stressed":
+      fetchRecipesByMood('Stressed')
+      localStorage.mood = "stressed"
+      break
+      case "romantic":
+      fetchRecipesByMood('Romantic')
+      localStorage.mood = "romantic"
+      break
+      case "sad":
+      fetchRecipesByMood('Sad')
+      localStorage.mood = "sad"
+      break
+      case "hungry":
+      fetchRecipesByMood('Indifferent')
+      localStorage.mood = "indifferent"
+      break
+    }
   }
 
   moreRecipes = () => {
-    const { props: { recipes }, state: { index } } = this
+    const { props: { recipes: { recipes} }, state: { index } } = this
     const increaseIndex = index + 1
     const newRecipeLength = recipes.length - 1
 
@@ -48,10 +87,15 @@ class Slideshow extends React.Component {
       return history.push(`/recipes/${ e.target.name }`)
   }
 
-  displayRecipeName = () => {
-    const { recipes } = this.props
+  getRecipes = () => {
+    const { history, recipes } = this.props
 
-    if(recipes.length > 0){
+  }
+
+  displayRecipeName = () => {
+    const { recipes } = this.props.recipes
+    console.log(recipes)
+    if(recipes && recipes.length > 0){
       const limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
       return limitedRecipes.map(recipe => {
         return <p key={recipe.name}>{recipe.name}</p>
@@ -61,13 +105,12 @@ class Slideshow extends React.Component {
     }
   }
 
-// do switch statement for slideshow moods comparing to slug
-
 
   displayRecipeImage = () => {
-    const { recipes } = this.props
+    const { recipes } = this.props.recipes
+    // console.log('Slideshow Props:', this.props)
 
-    if(recipes.length > 0){
+    if(recipes && recipes.length > 0){
       let limitedRecipes = recipes.slice(this.state.index, this.state.index + 1)
       return limitedRecipes.map(recipe => {
         return <img src={ recipe.image }
@@ -85,8 +128,7 @@ class Slideshow extends React.Component {
 
 
   render(){
-    // console.log(this.props);
-    const { props: { recipes }, state: { index } } = this
+    const { props: { recipes: { recipes } }, state: { index } } = this
     const correctIndex = index + 1
 
     return(
@@ -96,9 +138,15 @@ class Slideshow extends React.Component {
         </div>
           <div>
             <button className='slideshow-btn'> View All Recipes </button>
+
         { this.displayRecipeImage() }
         { this.displayRecipeName() }
-        <p>{ correctIndex } of { recipes.length }</p>
+        {
+          recipes ?
+          <p>{ correctIndex } of { recipes.length }</p>
+          :
+          <p>Loading...</p>
+        }
             <button className='slideshow-btn' onClick={ () => this.viewRecipe() }> View This Recipe </button>
           </div>
           <div>
@@ -109,11 +157,8 @@ class Slideshow extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ recipes: state.recipes.allRecipes })
+const mapStateToProps = state => ({ recipes: state.recipes.mood })
 
-const mapDispatchToProps = {
-  fetchRecipes: fetchRecipes,
-  // clickToGoToRecipePage: clickToGoToRecipePage
-}
+const mapDispatchToProps = { fetchRecipesByMood }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Slideshow));

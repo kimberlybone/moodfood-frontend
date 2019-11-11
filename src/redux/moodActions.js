@@ -1,12 +1,10 @@
+
+import { fetchRecipesByMood } from './recipeActions'
+
 const changeColor = colors => ({ type: 'COLOR', colors })
-// const goToRecipePage = recipe => ({ type: 'RECIPE', recipe })
 
-
-export const clickToChangeColor = e => dispatch => {
+export const clickToChangeColor = (e, name) => dispatch => {
   dispatch(changeColor(e.target.name))
   localStorage.color = e.target.name
+  dispatch(fetchRecipesByMood(name))
 }
-
-// export const clickToGoToRecipePage = e => dispatch => {
-//   dispatch(goToRecipePage(e.target.name))
-// }

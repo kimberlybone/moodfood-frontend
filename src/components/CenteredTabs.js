@@ -18,7 +18,6 @@ import Tab from '@material-ui/core/Tab';
   const CenteredTabs = (props) => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    // console.log(props);
 
     const goHome = () => {
       const { history } = props
@@ -30,12 +29,11 @@ import Tab from '@material-ui/core/Tab';
     }
     const goToSlideshow = () => {
       const { history } = props
-      history.push('/slideshow/:slug')
+      history.push(`/slideshow/${localStorage.mood}`)
     }
 
     const goToLoginPage = () => {
       const { history, logout } = props
-      // console.log(logout);
       logout()
       history.push('/login')
     }
