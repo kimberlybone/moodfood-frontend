@@ -2,25 +2,25 @@ import React from 'react'
 import { fetchRecipes, fetchIndividualRecipe } from '../redux/recipeActions'
 import { connect } from 'react-redux'
 import '../Assets/HomeContainer.css'
+import '../Stylesheets/RecipePage.css'
 
 class RecipeShowPage extends React.Component {
   componentDidMount(){
     this.props.fetchIndividualRecipe(this.props.info.match.params.id)
   }
 
-  showIngredientName = () => {
-    const { recipe } = this.props
-    return recipe.recipe_ingredients.map(ingredient => {
-      return <li key={ingredient.id}>{ingredient.name}</li>
+
+  showIngredientImage = () => {
+   const { recipe } = this.props
+   return  recipe.ingredients.map(ingredient => {
+      const imageName = `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
+      const new_ingredient = recipe.recipe_ingredients.find(ri => ri.ingredient_id === ingredient.id)
+      console.log(new_ingredient);
+        return <div><li key={new_ingredient.name}>{new_ingredient.name}</li>
+                    <img className='ing-img' key={ingredient.id} src={ imageName } alt='ing'></img>
+                  </div>
     })
   }
-
-  // showIngredientImage = () => {
-  //   const { recipe } = this.props
-  //   return recipe.ingredients.map(ingredient => {
-  //     return <img key={ingredient.id} src={ingredient.image} alt='ing'></img>
-  //   })
-  // }
 
 
 
@@ -45,13 +45,10 @@ class RecipeShowPage extends React.Component {
           :
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
         }
-        Ingredients:
-        {
-          recipe.ingredients ?
-        this.showIngredientName()
-        :
-        <p>Loading name...</p>
-        }
+        <h4>Ingredients:</h4>
+        <div className='ing-div'>
+          { recipe.ingredients ? this.showIngredientImage() : <p>Loading image...</p> }
+        </div>
 
         </div>
       </div>

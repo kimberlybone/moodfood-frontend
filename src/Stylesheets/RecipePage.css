@@ -1,0 +1,15 @@
+.ing-img {
+  border-radius:50% 50% 50% 50%;
+  width:70px;
+  height:70px;
+}
+
+.ing-div {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.recipe-page {
+  display: grid;
+  grid-template-columns: auto auto;
+}
