@@ -1,7 +1,7 @@
 import React from 'react'
 import { loginUserToDB } from '../redux/userActions'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter, NavLink } from 'react-router-dom'
 import '../Assets/AccountInfo.css'
 
 class LoginForm extends React.Component {
@@ -57,6 +57,7 @@ class LoginForm extends React.Component {
             value={ password }
             placeholder='Password'/></p>
           <input className='form-btn' type='submit'></input>
+          <p>New user? <NavLink to='/signup'>Sign Up Here</NavLink></p>
         </form>
       </div>
     )

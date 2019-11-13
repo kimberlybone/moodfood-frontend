@@ -5,14 +5,14 @@ import '../Assets/HomeContainer.css'
 
 class RecipeCard extends React.Component {
 
-  // create action to fetch to the show page in backend
   render(){
+    console.log(this.props);
+    const { name, instructions, image } = this.props
     return(
       <div className='recipe-card'>
-      Recipe Image
+      <img src={ image } alt='food' className='slideshow-img'></img>
         <div>
-        <p>-------------</p>
-        Recipe Title
+        <p>{ name }</p>
         </div>
       </div>
     )

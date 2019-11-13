@@ -1,9 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { clickToChangeColor } from '../redux/moodActions'
-// import { fetchRecipes } from '../redux/recipeActions'
 import { connect } from 'react-redux'
-import '../Assets/MoodContainer.css'
+import '../Stylesheets/MoodContainer.css'
 
 import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
@@ -11,9 +10,6 @@ import 'animate.css';
 
 
 class MoodContainer extends React.Component {
-  // componentDidMount() {
-  //   this.props.fetchRecipes()
-  // }
 
 
   render(){
@@ -70,9 +66,6 @@ class MoodContainer extends React.Component {
 
 const mapStateToProps = state => ({ colors: state.colors, recipes: state.recipes })
 
-const mapDispatchToProps = {
-  clickToChangeColor: clickToChangeColor,
-  // fetchRecipes: fetchRecipes
-}
+const mapDispatchToProps = { clickToChangeColor }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoodContainer);

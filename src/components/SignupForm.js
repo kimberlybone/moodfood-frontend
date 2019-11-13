@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Assets/AccountInfo.css'
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter, NavLink } from 'react-router-dom'
 import { createNewUserToDB } from '../redux/userActions'
 
 class SignupForm extends React.Component {
@@ -73,8 +73,10 @@ class SignupForm extends React.Component {
             value={ password }
             placeholder='Password'/></p>
           <input className='form-btn' type='submit'></input>
+          <p>Returning user? <NavLink to='/login'>Log In Here</NavLink></p>
         </form>
-      </div>)
+      </div>
+    )
   }
 }
 const mapStateToProps = state => ({ errors: state.errors, user: state.user })

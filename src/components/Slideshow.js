@@ -3,7 +3,7 @@ import { fetchRecipesByMood } from '../redux/recipeActions'
 // import { clickToGoToRecipePage } from '../redux/moodActions'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import '../Assets/MoodContainer.css'
+import '../Stylesheets/MoodContainer.css'
 
 class Slideshow extends React.Component {
 
@@ -137,7 +137,6 @@ class Slideshow extends React.Component {
           <button className='slideshow-btn' onClick={ () => this.lessRecipes() }> Back </button>
         </div>
           <div>
-            <button className='slideshow-btn'> View All Recipes </button>
 
         { this.displayRecipeImage() }
         { this.displayRecipeName() }
@@ -147,7 +146,7 @@ class Slideshow extends React.Component {
           :
           <p>Loading...</p>
         }
-            <button className='slideshow-btn' onClick={ () => this.viewRecipe() }> View This Recipe </button>
+        <button className='view-all-btn'> View All Recipes </button>
           </div>
           <div>
             <button className='slideshow-btn' onClick={ () => this.moreRecipes()}> Next </button>

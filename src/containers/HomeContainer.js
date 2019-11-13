@@ -9,18 +9,27 @@ class HomeContainer extends React.Component {
     this.props.fetchRecipes()
   }
 
-  render(){
-    // const { recipes } = this.props
+  displayRecipes = () => {
+    const { recipes } = this.props
 
+      return recipes.map(recipe => {
+        return <RecipeCard key={ recipe.name }
+                           name={ recipe.name }
+                           instructions={ recipe.instructions }
+                           image={ recipe.image }/>
+      })
+  }
+
+  render(){
     return(
       <div>
         Home Container
-        <RecipeCard/>
+        <p>{ this.displayRecipes() }</p>
       </div>
     )
   }
 }
-const mapStateToProps = state => ({ recipes: state.recipes })
+const mapStateToProps = state => ({ recipes: state.recipes.allRecipes })
 
 const mapDispatchToProps = { fetchRecipes }
 
