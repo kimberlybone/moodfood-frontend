@@ -43,6 +43,8 @@ class SignupForm extends React.Component {
     return(
       <div className='login-page'>
         <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
+          <h2>Create Account</h2>
+          <p>Returning user? <NavLink to='/login'>Log In Here</NavLink></p>
           { this.displayErrors() }
           <p className='form-input'>
             Username: <br></br> <input
@@ -72,8 +74,7 @@ class SignupForm extends React.Component {
             className='form-input'
             value={ password }
             placeholder='Password'/></p>
-          <input className='form-btn' type='submit'></input>
-          <p>Returning user? <NavLink to='/login'>Log In Here</NavLink></p>
+          <input className='form-btn' type='submit' value='Signup'></input>
         </form>
       </div>
     )

@@ -41,6 +41,8 @@ class LoginForm extends React.Component {
     return(
       <div className='login-page'>
         <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
+          <h2>Log In</h2>
+          <p>New user? <NavLink to='/signup'>Sign Up Here</NavLink></p>
           {this.displayErrors()}
           <p className='form-input'>
             Username: <br></br> <input
@@ -56,8 +58,7 @@ class LoginForm extends React.Component {
             className='form-input'
             value={ password }
             placeholder='Password'/></p>
-          <input className='form-btn' type='submit'></input>
-          <p>New user? <NavLink to='/signup'>Sign Up Here</NavLink></p>
+          <input className='form-btn' type='submit' value='Login'></input>
         </form>
       </div>
     )

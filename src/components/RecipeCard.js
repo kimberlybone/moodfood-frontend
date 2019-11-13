@@ -13,8 +13,8 @@ class RecipeCard extends React.Component {
   }
 
   render(){
-    console.log(this.props);
-    const { name, instructions, image, id } = this.props
+    // console.log(this.props);
+    const { name, image, id } = this.props
     return(
       <div className='recipe-card'>
       <img onClick={this.onImageClick} src={ image } name={id} alt='food' className='slideshow-img'></img>

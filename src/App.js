@@ -13,7 +13,7 @@ import Profile from './components/Profile'
 import SignupForm from './components/SignupForm'
 import RecipeShowPage from './components/RecipeShowPage'
 
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 
 class App extends React.Component {

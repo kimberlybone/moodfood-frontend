@@ -25,10 +25,10 @@ class HomeContainer extends React.Component {
   render(){
     return(
       <div>
-        <button>Vegan</button>
-        <button>Vegetarian</button>
-        <button>Gluten Free</button>
-        <button>Dairy Free</button>
+        <button className='home-options'><h5 className='home-text'>Vegan</h5></button>
+        <button className='home-options'><h5 className='home-text'>Vegetarian</h5></button>
+        <button className='home-options'><h5 className='home-text'>Gluten Free</h5></button>
+        <button className='home-options'><h5 className='home-text'>Dairy Free</h5></button>
         <p className='home-page'>{ this.displayRecipes() }</p>
       </div>
     )

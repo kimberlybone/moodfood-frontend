@@ -15,6 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { withRouter } from 'react-router-dom'
 
 
 const useStyles = makeStyles(theme => ({
@@ -50,6 +51,14 @@ const RecipeReviewCard = (props) => {
     setExpanded(!expanded);
   };
 
+  const onImageClick = e => {
+      return props.history.push(`/recipes/${ e.target.title }`)
+  }
+
+  // const styles = {
+  //   cursor: 'pointer'
+  // }
+
   return (
     <Card className={classes.card}>
       <CardHeader
@@ -68,8 +77,9 @@ const RecipeReviewCard = (props) => {
       />
       <CardMedia
         className={classes.media}
+        onClick={onImageClick}
         image={props.image}
-        title="Paella dish"
+        title={props.id}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -113,4 +123,4 @@ const RecipeReviewCard = (props) => {
     </Card>
   );
 }
-export default RecipeReviewCard
+export default withRouter(RecipeReviewCard)
