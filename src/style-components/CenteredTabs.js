@@ -3,17 +3,17 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../redux/userActions'
 
-
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
+
   const useStyles = makeStyles({
-    root: {
-      flexGrow: 1,
-    },
-  });
+      root: {
+        flexGrow: 1,
+      },
+    });
 
   const CenteredTabs = (props) => {
     const classes = useStyles();
@@ -29,7 +29,7 @@ import Tab from '@material-ui/core/Tab';
     }
     const goToSlideshow = () => {
       const { history } = props
-      history.push(`/slideshow/${localStorage.mood}`)
+      history.push(`/slideshow/${ localStorage.mood }`)
     }
 
     const goToLoginPage = () => {
@@ -43,18 +43,18 @@ import Tab from '@material-ui/core/Tab';
     };
 
     return (
-      <Paper className={classes.root}>
+      <Paper className={ classes.root }>
         <p><Tabs
-          value={value}
-          onChange={handleChange}
+          value={ value }
+          onChange={ handleChange }
           indicatorColor="primary"
           textColor="primary"
           centered
           >
-          <Tab onClick={goToProfile} label="Profile" />
-          <Tab onClick={goToSlideshow} label="My Slideshow" />
-          <Tab onClick={goHome} label="Home" />
-          <Tab onClick={goToLoginPage} label="Logout" />
+          <Tab onClick={ goToProfile } label="Profile" />
+          <Tab onClick={ goToSlideshow } label="My Slideshow" />
+          <Tab onClick={ goHome } label="Home" />
+          <Tab onClick={ goToLoginPage } label="Logout" />
         </Tabs></p>
       </Paper>
     );

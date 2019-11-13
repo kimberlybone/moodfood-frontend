@@ -8,6 +8,8 @@ import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import 'animate.css';
 import Typical from 'react-typical'
+import MyNotfication from '../style-components/MyNotification'
+
 
 
 class MoodContainer extends React.Component {
@@ -19,7 +21,7 @@ class MoodContainer extends React.Component {
     return(
       <div>
         <Typical
-          steps={['Hello', 1000, 'How are you feeling today?', 1500]}
+          steps={['Hello', 700, 'How are you feeling today?', 1500]}
           loop={Infinity}
           wrapper="h1"
         />
@@ -28,8 +30,8 @@ class MoodContainer extends React.Component {
                   store.addNotification({
                   title: 'ADVENTUROUS',
                   message: 'Here are some recipes to fulfill your ADVENTUROUS mood!',
-                  type: 'default',                         // 'default', 'success', 'info', 'warning'
-                  container: 'bottom-left',                // where to position the notifications
+                  type: 'info',                         // 'info', 'success', 'info', 'warning'
+                  container: 'bottom-center',                // where to position the notifications
                   animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                   animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                   dismiss: {
@@ -43,9 +45,10 @@ class MoodContainer extends React.Component {
             <p><NavLink onClick={e => {
                     store.addNotification({
                     title: 'ANGRY',
+                    insert: 'top',
                     message: 'Here are some recipes to fulfill your ANGRY mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -60,8 +63,8 @@ class MoodContainer extends React.Component {
                     store.addNotification({
                     title: 'ANXIOUS',
                     message: 'Here are some recipes to fulfill your ANXIOUS mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -75,8 +78,8 @@ class MoodContainer extends React.Component {
                     store.addNotification({
                     title: 'CALM',
                     message: 'Here are some recipes to fulfill your CALM mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -90,8 +93,8 @@ class MoodContainer extends React.Component {
                     store.addNotification({
                     title: 'HAPPY',
                     message: 'Here are some recipes to fulfill your HAPPY mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -105,8 +108,8 @@ class MoodContainer extends React.Component {
                     store.addNotification({
                     title: 'STRESSED',
                     message: 'Here are some recipes to fulfill your STRESSED mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -120,8 +123,8 @@ class MoodContainer extends React.Component {
                     store.addNotification({
                     title: 'ROMANTIC',
                     message: 'Here are some recipes to fulfill your ROMANTIC mood!',
-                    type: 'default',                         // 'default', 'success', 'info', 'warning'
-                    container: 'bottom-left',                // where to position the notifications
+                    type: 'info',                         // 'info', 'success', 'info', 'warning'
+                    container: 'bottom-center',                // where to position the notifications
                     animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                     animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                     dismiss: {
@@ -135,8 +138,8 @@ class MoodContainer extends React.Component {
                    store.addNotification({
                    title: 'SAD',
                    message: 'Here are some recipes to fulfill your SAD mood!',
-                   type: 'default',                         // 'default', 'success', 'info', 'warning'
-                   container: 'bottom-left',                // where to position the notifications
+                   type: 'info',                         // 'info', 'success', 'info', 'warning'
+                   container: 'bottom-center',                // where to position the notifications
                    animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                    animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                    dismiss: {
@@ -150,8 +153,8 @@ class MoodContainer extends React.Component {
                    store.addNotification({
                    title: 'JUST HUNGRY',
                    message: 'Here are some recipes to fulfill your hunger!',
-                   type: 'default',                         // 'default', 'success', 'info', 'warning'
-                   container: 'bottom-left',                // where to position the notifications
+                   type: 'info',                         // 'info', 'success', 'info', 'warning'
+                   container: 'bottom-center',                // where to position the notifications
                    animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
                    animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
                    dismiss: {

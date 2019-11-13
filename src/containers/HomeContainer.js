@@ -14,11 +14,11 @@ class HomeContainer extends React.Component {
     const { recipes } = this.props
 
       return recipes.map(recipe => {
-        return <p><RecipeReviewCard key={ recipe.name }
+        return <div><RecipeReviewCard key={ recipe.name }
                            name={ recipe.name }
                            id={ recipe.id }
                            instructions={ recipe.instructions }
-                           image={ recipe.image }/></p>
+                           image={ recipe.image }/></div>
       })
   }
 
@@ -29,7 +29,7 @@ class HomeContainer extends React.Component {
         <button>Vegetarian</button>
         <button>Gluten Free</button>
         <button>Dairy Free</button>
-        <p>{ this.displayRecipes() }</p>
+        <p className='home-page'>{ this.displayRecipes() }</p>
       </div>
     )
   }

@@ -5,7 +5,6 @@ class Profile extends React.Component {
 
   render(){
     const { user } = this.props
-    console.log(user);
     return(
       <div>
       <h2>My profile</h2>
@@ -16,9 +15,5 @@ class Profile extends React.Component {
   }
 }
 const mapStateToProps = state => ({ user: state.user })
-
-// const mapDispatchToProps = {
-//   persistUserFromAPI: persistUserFromAPI
-// }
 
 export default connect(mapStateToProps)(Profile);
