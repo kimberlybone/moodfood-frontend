@@ -12,7 +12,7 @@ class Slideshow extends React.Component {
 
   componentDidMount() {
     const { match: {params: {slug}}, fetchRecipesByMood } = this.props
-    
+
     switch (slug){
       case "adventurous":
       fetchRecipesByMood('Adventurous')
@@ -86,9 +86,9 @@ class Slideshow extends React.Component {
       return history.push(`/recipes/${ e.target.name }`)
   }
 
-  getRecipes = () => {
-    const { history, recipes } = this.props
-
+  viewAllRecipes = () => {
+    const { history } = this.props
+    history.push('/home')
   }
 
   displayRecipeName = () => {
@@ -145,7 +145,7 @@ class Slideshow extends React.Component {
           :
           <p>Loading...</p>
         }
-        <button className='view-all-btn'> View All Recipes </button>
+        <button className='view-all-btn' onClick={ this.viewAllRecipes }> View All Recipes </button>
           </div>
           <div>
             <button className='slideshow-btn' onClick={ () => this.moreRecipes()}> Next </button>

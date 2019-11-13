@@ -8,7 +8,20 @@ class RecipeShowPage extends React.Component {
     this.props.fetchIndividualRecipe(this.props.info.match.params.id)
   }
 
-  // create action to fetch to the show page in backend
+  showIngredientName = () => {
+    const { recipe } = this.props
+    return recipe.recipe_ingredients.map(ingredient => {
+      return <li key={ingredient.id}>{ingredient.name}</li>
+    })
+  }
+
+  // showIngredientImage = () => {
+  //   const { recipe } = this.props
+  //   return recipe.ingredients.map(ingredient => {
+  //     return <img key={ingredient.id} src={ingredient.image} alt='ing'></img>
+  //   })
+  // }
+
 
 
   render(){
@@ -31,6 +44,13 @@ class RecipeShowPage extends React.Component {
           <p> { recipe.instructions } </p>
           :
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
+        }
+        Ingredients:
+        {
+          recipe.ingredients ?
+        this.showIngredientName()
+        :
+        <p>Loading name...</p>
         }
 
         </div>
