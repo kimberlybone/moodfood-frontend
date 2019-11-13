@@ -1,6 +1,5 @@
 import React from 'react'
 import { fetchRecipesByMood } from '../redux/recipeActions'
-// import { clickToGoToRecipePage } from '../redux/moodActions'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import '../Stylesheets/MoodContainer.css'
@@ -13,7 +12,7 @@ class Slideshow extends React.Component {
 
   componentDidMount() {
     const { match: {params: {slug}}, fetchRecipesByMood } = this.props
-    // console.log(slug);
+    
     switch (slug){
       case "adventurous":
       fetchRecipesByMood('Adventurous')
