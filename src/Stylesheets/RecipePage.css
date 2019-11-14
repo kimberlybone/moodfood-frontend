@@ -13,3 +13,6 @@
   display: grid;
   grid-template-columns: auto auto;
 }
+.recipe-img {
+  width: 75vw;
+}

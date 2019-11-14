@@ -12,13 +12,14 @@ class HomeContainer extends React.Component {
 
   displayRecipes = () => {
     const { recipes } = this.props
-
+    console.log(recipes);
       return recipes.map(recipe => {
         return <div><RecipeReviewCard key={ recipe.name }
                            name={ recipe.name }
                            id={ recipe.id }
                            instructions={ recipe.instructions }
-                           image={ recipe.image }/></div>
+                           image={ recipe.image }
+                           cookingMinutes={ recipe.cookingMinutes }/></div>
       })
   }
 

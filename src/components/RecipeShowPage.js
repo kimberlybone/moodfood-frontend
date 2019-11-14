@@ -15,7 +15,7 @@ class RecipeShowPage extends React.Component {
    return  recipe.ingredients.map(ingredient => {
       const imageName = `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
       const new_ingredient = recipe.recipe_ingredients.find(ri => ri.ingredient_id === ingredient.id)
-      console.log(new_ingredient);
+
         return <div><li key={new_ingredient.name}>{new_ingredient.name}</li>
                     <img className='ing-img' key={ingredient.id} src={ imageName } alt='ing'></img>
                   </div>
@@ -26,7 +26,7 @@ class RecipeShowPage extends React.Component {
 
   render(){
     const { recipe } = this.props
-    console.log(this.props)
+    console.log(recipe)
     return(
       <div className='recipe-page'>
         {
@@ -36,21 +36,29 @@ class RecipeShowPage extends React.Component {
           <p> Loading your image... </p>
         }
         <div>
+          { recipe.preparationMinutes ? <p> Preparation Time:<h4>{ recipe.preparationMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
+          { recipe.cookingMinutes ? <p> Cooking Time:<h4>{ recipe.cookingMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
+          { recipe.servings ? <p> Servings:<h4>{ recipe.servings }</h4> </p> : <h6> Loading...</h6>}
+          { recipe.price_per_serving ? <p> Per Serving:<h4>$ 0.{ recipe.price_per_serving }</h4> </p> : <h6> Loading...</h6>}
+
+        </div>
+        <div>
+
         <h3> Feeling { localStorage.mood }?</h3>
-        <h2> Try { recipe.name } </h2>
+        <h1> Try { recipe.name } </h1>
 
         {
           recipe.instructions ?
-          <p> { recipe.instructions } </p>
+          <h6> { recipe.instructions } </h6>
           :
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
         }
-        <h4>Ingredients:</h4>
+      </div>
         <div className='ing-div'>
+          <p><h4>Ingredients:</h4></p>
           { recipe.ingredients ? this.showIngredientImage() : <p>Loading image...</p> }
         </div>
 
-        </div>
       </div>
     )
   }

@@ -55,6 +55,8 @@ const RecipeReviewCard = (props) => {
       return props.history.push(`/recipes/${ e.target.title }`)
   }
 
+  const cookingMinutes = `Ready in ${props.cookingMinutes} minutes`
+
   // const styles = {
   //   cursor: 'pointer'
   // }
@@ -73,7 +75,7 @@ const RecipeReviewCard = (props) => {
           </IconButton>
         }
         title={props.name}
-        subheader="Ready in: September 14, 2016"
+        subheader={ cookingMinutes }
       />
       <CardMedia
         className={classes.media}
