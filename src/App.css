@@ -4,9 +4,15 @@
   min-width: 100%;
   /* z-index: -10; */
   position: absolute;
-  overflow: hidden;
+  overflow: auto;
+  background: fixed;
 }
 
+.App {
+  background-size: cover;
+  /* background-color: rgba(255,255,255,0.5); */
+  height: 100%;
+}
 
 
 .App-link {

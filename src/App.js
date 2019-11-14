@@ -45,17 +45,19 @@ class App extends React.Component {
 render(){
 
     const stylesObj = {
-      background: localStorage.color
+      backgroundImage: `url(${localStorage.color})`
     };
 
     return (
         <div className="App" style={ stylesObj }>
+          <div className='App-div'>
+
           { localStorage.token && this.props.location.pathname !== '/mood' ?
             this.showNavBar()
             :
             null
           }
-          <div >
+          <div className='route-div'>
             <ReactNotifications/>
             <Route exact
               path='/recipes/:id'
@@ -78,6 +80,7 @@ render(){
             <Route exact
               path='/slideshow/:slug'
               render={ () => <Slideshow /> } />
+          </div>
           </div>
         </div>
       );

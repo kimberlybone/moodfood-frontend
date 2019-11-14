@@ -26,7 +26,9 @@ class RecipeShowPage extends React.Component {
 
   render(){
     const { recipe } = this.props
+    const new_price = recipe.price_per_serving/100
     console.log(recipe)
+
     return(
       <div className='recipe-page'>
         {
@@ -35,14 +37,14 @@ class RecipeShowPage extends React.Component {
           :
           <p> Loading your image... </p>
         }
-        <div>
+        <div className='info-recipe-div'>
           { recipe.preparationMinutes ? <p> Preparation Time:<h4>{ recipe.preparationMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
           { recipe.cookingMinutes ? <p> Cooking Time:<h4>{ recipe.cookingMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
           { recipe.servings ? <p> Servings:<h4>{ recipe.servings }</h4> </p> : <h6> Loading...</h6>}
-          { recipe.price_per_serving ? <p> Per Serving:<h4>$ 0.{ recipe.price_per_serving }</h4> </p> : <h6> Loading...</h6>}
+          { recipe.price_per_serving ? <p> Per Serving:<h4>${ new_price }</h4> </p> : <h6> Loading...</h6>}
 
         </div>
-        <div>
+        <div className='info-recipe-div'>
 
         <h3> Feeling { localStorage.mood }?</h3>
         <h1> Try { recipe.name } </h1>
@@ -52,6 +54,9 @@ class RecipeShowPage extends React.Component {
           <h6> { recipe.instructions } </h6>
           :
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
+        }
+        {
+          recipe.pairing_text ? <p> Wine Pairing:<h5>{ recipe.pairing_text }</h5> </p> : <h6> Loading...</h6>
         }
       </div>
         <div className='ing-div'>

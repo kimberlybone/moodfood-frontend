@@ -15,6 +15,9 @@
   'r-summary'
   'r-image'
 }
+.recipes-div {
+  overflow: scroll;
+}
 
 .recipe-card::before {
   background-color: lightblue;
@@ -40,9 +43,11 @@
   /* grid-template-areas: 25% 25% 25% 25%; */
   grid-template-columns: auto auto auto;
   grid-gap: 10px;
+  margin-left: 10vh;
+  overflow: scroll;
 }
 
-.home-options {
+.vegan-option {
   background-image: url(https://www.iamexpat.nl/sites/default/files/styles/article--full/public/vegan-restaurants-amsterdam.jpg?itok=faMnR2LO);
   background-size: cover;
   border-radius:50% 50% 50% 50%;
@@ -54,9 +59,63 @@
   font-weight: bolder;
   margin: 20px;
 }
+
+.dairy-option {
+  background-image: url(https://www.usalovelist.com/wp-content/uploads/2018/02/Best-Non-Dairy-Milk-Products-American-Made-640x640.jpg);
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:70px;
+  height:70px;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+  margin: 20px;
+}
+.vegetarian-option {
+  background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/vegetarian-recipe-zucchini-boat-1567096839.jpg?crop=1xw:1xh;center,top&resize=480:*);
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:70px;
+  height:70px;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+  margin: 20px;
+}
+.gluten-option {
+  background-image: url(https://www.wholefoodsmarket.com/sites/default/files/styles/header_hero/public/GF-VeggieNoodles-MiniTurkeyMeatballs_430.jpg?itok=Up-e8TMc);
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:70px;
+  height:70px;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+  margin: 20px;
+}
+.all-option {
+  background-image: url(https://img.huffingtonpost.com/asset/5b438c212200002f07eed981.jpeg?cache=N8Tw8B1SHm&ops=scalefit_720_noupscale);
+  background-size: cover;
+  border-radius:50% 50% 50% 50%;
+  width:70px;
+  height:70px;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+  margin: 20px;
+}
+
 .home-text {
   background-color: white;
   background-color: rgba(255,255,255,0.7);
   color: black;
   /* border-radius: 10px; */
+}
+
+.is-hovered:hover {
+  cursor: pointer;
 }

@@ -5,8 +5,11 @@
 }
 
 .ing-div {
+  background-image: url(https://tr1.cbsistatic.com/hub/i/2015/05/07/d2f74d35-f4ad-11e4-940f-14feb5cc3d2a/03052013figure-d.gif);
   display: grid;
   grid-template-columns: auto auto auto;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 100;
 }
 
 .recipe-page {
@@ -15,4 +18,13 @@
 }
 .recipe-img {
   width: 75vw;
+}
+.info-recipe-div {
+  border: solid;
+  border-width: thin;
+  border-color: white;
+  border-radius: 3px;
+  background-color: white;
+  /* background-color: rgba(255,255,255,0.5); */
+  z-index: 100;
 }

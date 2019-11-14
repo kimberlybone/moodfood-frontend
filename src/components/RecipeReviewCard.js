@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -16,6 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { withRouter } from 'react-router-dom'
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -56,10 +57,8 @@ const RecipeReviewCard = (props) => {
   }
 
   const cookingMinutes = `Ready in ${props.cookingMinutes} minutes`
-
-  // const styles = {
-  //   cursor: 'pointer'
-  // }
+  const instructions = `${props.instructions}`
+  const summary = `${instructions.slice(0, 100)}...`
 
   return (
     <Card className={classes.card}>
@@ -82,20 +81,16 @@ const RecipeReviewCard = (props) => {
         onClick={onImageClick}
         image={props.image}
         title={props.id}
+        onMouseOver={(e) => e.target.classList.toggle('is-hovered')}
+        onMouseLeave={(e) => e.target.classList.toggle('is-hovered')}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {summary}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -111,8 +106,6 @@ const RecipeReviewCard = (props) => {
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
           </Typography>
           <Typography paragraph>
             {props.instructions}
