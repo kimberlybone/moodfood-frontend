@@ -8,7 +8,7 @@ const NavBar = (props) => {
 
     return(
       <div>
-        <h1 className='header-h1'> Mood & Food </h1>
+        <h1 className='header-h1'> MoodFood </h1>
         <CenteredTabs/>
       </div>
     )
