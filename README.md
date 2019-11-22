@@ -31,13 +31,12 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 9. In the navigation bar, the user can click on profile to see their profile information
 
 ## Technologies
-- API: (https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
-- Ruby on Rails
-- JWT Auth
-- BCrypt
-- ActiveRecord
-- ActiveModel Serializers
-- RestClient
+- React js
+- Redux
+- React Hooks
+- Vanilla JavaScript
+- Vanilla CSS
+- Material UI CSS
 
 ## Installation
 *To view live version, go to this URL:[]()*
