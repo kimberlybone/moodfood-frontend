@@ -34,6 +34,8 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 - React js
 - Redux
 - React Hooks
+- React Router
+- Redux Thunk
 - Vanilla JavaScript
 - Vanilla CSS
 - Material UI CSS
@@ -45,15 +47,12 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 1. Clone repository
 
   ```
-  bundle install
-  rails db:create
-  rails db:migrate
-  rails db:seed
-  rails server
+  npm install
+  npm start
   ```
 - Server needs to run on http://localhost:3000
 
-2. Go to frontend repository to view frontend installation
+2. Go to backend repository to view backend installation
 
 ---
-***Authors: [Kimberly Bone](https://github.com/kimberlybone) & [Matt Werner](https://github.com/mrwerner392)***
+***Author: [Kimberly Bone](https://github.com/kimberlybone)***
