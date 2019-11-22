@@ -1,39 +1,34 @@
 # **MoodFood Frontend**
 
-Our app provides a virtual bar experience for users where users can choose a seat at the bar, buy a drink, favorite a drink, and create their own drink.
+My application uses artificial intelligence to suggest recipes based on a user's current mood in order to enhance it.
 
 ---
 
 ## Motivation
-When someone asks what you want to eat . Well I wanted to create an application
+Think of a time when someone asked what you wanted to eat. Usually our response is influenced by a current feeling we are trying to fulfill. As a nutrition science graduate, I'm always looking at the correlation between nutrients and psychology...or how specific nutrients affect how I feel. So I wanted to create an application that would give me food suggestions based on how I am currently feeling.
 
 ## Features
 
 - Filter by diet preference
-- Buy a drink
-- Favorite a drink
-- Create own drink
-- Watch TV
-- Choose a seat
-- Drink your cocktail
+- Ingredient show page
+- Profile page
+- Slideshow of recipes
 - Make account and log in
 - Validations on account information
+
+## DEMO
 
 ## Instructions
 1. A user can log in or sign up
 
-2. Choose a seat to sit
-3. View menu with drink names, ingredients, and drink creator
-4. Can filter drinks by category on the menu
-5. Can click the heart to favorite drink which will show up in side bar
-6. Can click drink name to buy
-7. After buying a user can close the menu and drink will appear on bar
-8. User can click on the drink to chug it
-9. On the menu, a user can click the "Create a Drink" button
-10. This page allows the user to choose a category, name, ingredients and instructions for their drink
-11. User can choose a maximum of 5 ingredients
-12. Once the drink is made, the user will be redirected to the bar
-13. The user's newly created drink will now be shown on the menu
+2. Pick the mood you are currently feeling
+3. View the slideshow of recipes for the chosen mood
+4. Can click on recipe picture to redirect to recipe show page
+5. To view all recipes, click on "Home"
+6. Can click on down arrow of each recipe card to see instructions
+7. Can filter by diet at the top of the Home page
+8. User can click on recipe picture to be redirected to that recipe's show page
+9. In the navigation bar, the user can click on profile to see their profile information
 
 ## Technologies
 - API: (https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita)
