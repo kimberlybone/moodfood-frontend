@@ -55,9 +55,7 @@ class RecipeShowPage extends React.Component {
           :
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
         }
-        {
-          recipe.pairing_text ? <p> Wine Pairing:<h5>{ recipe.pairing_text }</h5> </p> : null
-        }
+        { recipe.pairing_text ? <p> Wine Pairing:<h5>{ recipe.pairing_text }</h5> </p> : null }
       </div>
         <div className='ing-div'>
           <p><h4>Ingredients:</h4></p>
