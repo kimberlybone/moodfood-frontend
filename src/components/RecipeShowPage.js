@@ -39,7 +39,7 @@ class RecipeShowPage extends React.Component {
         }
         <div className='info-recipe-div'>
           { recipe.preparationMinutes ? <p> Preparation Time:<h4>{ recipe.preparationMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
-          { recipe.cookingMinutes ? <p> Cooking Time:<h4>{ recipe.cookingMinutes } minutes</h4> </p> : <h6> Loading...</h6>}
+          { recipe.cookingMinutes ? <p> Cooking Time:<h4>{ recipe.cookingMinutes } minutes</h4> </p> : null}
           { recipe.servings ? <p> Servings:<h4>{ recipe.servings }</h4> </p> : <h6> Loading...</h6>}
           { recipe.price_per_serving ? <p> Per Serving:<h4>${ new_price }</h4> </p> : <h6> Loading...</h6>}
 
@@ -56,7 +56,7 @@ class RecipeShowPage extends React.Component {
           <p>Sorry! There are no instructions to display for this recipe but here is the link to the recipe's website: </p>
         }
         {
-          recipe.pairing_text ? <p> Wine Pairing:<h5>{ recipe.pairing_text }</h5> </p> : <h6> Loading...</h6>
+          recipe.pairing_text ? <p> Wine Pairing:<h5>{ recipe.pairing_text }</h5> </p> : null
         }
       </div>
         <div className='ing-div'>

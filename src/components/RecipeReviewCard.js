@@ -59,6 +59,9 @@ const RecipeReviewCard = (props) => {
   const cookingMinutes = `Ready in ${props.cookingMinutes} minutes`
   const instructions = `${props.instructions}`
   const summary = `${instructions.slice(0, 100)}...`
+  const summary1 = `${instructions.slice(0, 100)}`
+  const summary2 = `${instructions.slice(100, 200)}`
+  const summary3 = `${instructions.slice(200, 300)}...`
 
   return (
     <Card className={classes.card}>
@@ -108,10 +111,16 @@ const RecipeReviewCard = (props) => {
           <Typography paragraph>
           </Typography>
           <Typography paragraph>
-            {props.instructions}
+            {summary1}
           </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          <Typography paragraph>
+            {summary2}
+          </Typography>
+          <Typography paragraph>
+            {summary3}
+          </Typography>
+          <Typography paragraph>
+            Click on Image for more!
           </Typography>
         </CardContent>
       </Collapse>
