@@ -20,5 +20,5 @@ const reducer = combineReducers({
   recipes: recipeReducer
 })
 
-export default createStore(reducer, applyMiddleware(thunk))
+export default createStore( reducer, applyMiddleware(thunk) )
 // thunk makes dispatches asynchronous

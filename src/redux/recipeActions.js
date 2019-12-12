@@ -11,11 +11,10 @@ export const fetchRecipes = recipes => dispatch => {
       'Authorization': localStorage.token
     }
   }
-  fetch(URL + '/recipes', config)
-  .then(res => res.json())
-  .then(recipes => {
-    // console.log(recipes)
-    dispatch(showRecipesForMood(recipes))
+  fetch( URL + '/recipes', config )
+  .then( res => res.json() )
+  .then( recipes => {
+    dispatch( showRecipesForMood(recipes) )
   })
 }
 
@@ -26,15 +25,12 @@ export const fetchIndividualRecipe = id => dispatch => {
       'Authorization': localStorage.token
     }
   }
-  fetch(URL + `/recipes/${id}`, config)
-  .then(res => res.json())
-  .then(recipe => {
-    // console.log(recipe)
-    dispatch(getIndividualRecipe(recipe))
+  fetch( URL + `/recipes/${ id }`, config )
+  .then( res => res.json() )
+  .then( recipe => {
+    dispatch( getIndividualRecipe(recipe) )
   })
 }
-
-
 
 export const fetchRecipesByMood = name => dispatch => {
   const config = {
@@ -43,10 +39,9 @@ export const fetchRecipesByMood = name => dispatch => {
       'Authorization': localStorage.token
     }
   }
-  fetch(URL + `/moods/${name}`, config)
-  .then(res => res.json())
-  .then(mood => {
-    // console.log("MoodRecipes:", mood)
-    dispatch(getRecipeByMood(mood))
+  fetch( URL + `/moods/${ name }`, config )
+  .then( res => res.json() )
+  .then( mood => {
+    dispatch( getRecipeByMood(mood) )
   })
 }
