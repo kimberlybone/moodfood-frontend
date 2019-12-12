@@ -18,12 +18,6 @@ class LoginForm extends React.Component {
     loginUserToDB(this.state)
     history.push('/mood')
   }
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { user, history } = this.props
-  //   if(user.name){
-  //     history.push('/mood')
-  //   }
-  // }
 
   displayErrors = () => {
     const { errors } = this.props
@@ -43,7 +37,7 @@ class LoginForm extends React.Component {
         <form onChange={ this.handleChange } onSubmit={ this.handleSubmit } className='login-form'>
           <h2>Log In</h2>
           <p>New user? <NavLink to='/signup'>Sign Up Here</NavLink></p>
-          {this.displayErrors()}
+          { this.displayErrors() }
           <p className='form-input'>
             Username: <br></br> <input
             type='text'
@@ -69,4 +63,4 @@ const mapStateToProps = state => ({ errors: state.errors, user: state.user })
 
 const mapDispatchToProps = { loginUserToDB };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm))
+export default withRouter( connect( mapStateToProps, mapDispatchToProps )( LoginForm ))

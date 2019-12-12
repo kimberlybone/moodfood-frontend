@@ -4,7 +4,7 @@ import CenteredTabs from '../style-components/CenteredTabs'
 import '../Assets/NavBar.css'
 
 
-const NavBar = (props) => {
+const NavBar = ( props ) => {
 
     return(
       <div>

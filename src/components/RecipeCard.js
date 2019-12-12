@@ -29,4 +29,4 @@ const mapStateToProps = state => ({ recipes: state.recipes })
 
 const mapDispatchToProps = { fetchRecipes }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RecipeCard));
+export default withRouter( connect( mapStateToProps, mapDispatchToProps )( RecipeCard ));

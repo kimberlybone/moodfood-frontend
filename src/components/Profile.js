@@ -54,4 +54,4 @@ const Profile = (props) => {
 }
 const mapStateToProps = state => ({ user: state.user })
 
-export default connect(mapStateToProps)(Profile);
+export default connect( mapStateToProps )( Profile );

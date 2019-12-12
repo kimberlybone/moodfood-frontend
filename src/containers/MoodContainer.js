@@ -42,7 +42,7 @@ class MoodContainer extends React.Component {
               className='mood-link'
               name='https://foodrevolution.org/wp-content/uploads/blog-featured_purple_veggies_cropped-20180312.jpg'
               to='/slideshow/adventurous'>Adventurous</NavLink></p>
-            <p><NavLink onClick={e => {
+            <p><NavLink onClick={ e => {
                     store.addNotification({
                     title: 'ANGRY',
                     insert: 'top',
@@ -55,7 +55,7 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Angry')
+                  clickToChangeColor( e, 'Angry' )
                 }}
                       name='https://www.drfuhrman.com/content-image.ashx?id=75vhahqp78rt53i8ocuup0'
                       className='mood-link'
@@ -72,7 +72,8 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Anxious')}}
+                  clickToChangeColor(e, 'Anxious')
+                }}
                        name='http://static1.squarespace.com/static/53213059e4b0f7c737c339b1/t/5c46a3cc6d2a73efe1ef2ecc/1548133347499/Orange-Foods_Wordpress-Featured-Image.jpg?format=1500w'
                        className='mood-link'
                        to='/slideshow/anxious'>Anxious</NavLink></p>
@@ -88,11 +89,12 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Calm')}}
+                  clickToChangeColor(e, 'Calm')
+                }}
                        className='mood-link'
                        name='https://i.kinja-img.com/gawker-media/image/upload/s--6qYml0gb--/c_scale,f_auto,fl_progressive,q_80,w_800/wnalflilwxg2b8vvtdin.jpg'
                        to='/slideshow/calm'>Calm</NavLink></p>
-            <p><NavLink onClick={e => {
+            <p><NavLink onClick={ e => {
                     store.addNotification({
                     title: 'HAPPY',
                     message: 'Here are some recipes to fulfill your HAPPY mood!',
@@ -104,11 +106,12 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Happy')}}
+                  clickToChangeColor(e, 'Happy')
+                }}
                       className='mood-link'
                       name='https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/kiwano-melon-1296x728-feature.jpg?w=1155&h=1528'
                       to='/slideshow/happy'>Happy</NavLink></p>
-            <p><NavLink onClick={e => {
+            <p><NavLink onClick={ e => {
                     store.addNotification({
                     title: 'STRESSED',
                     message: 'Here are some recipes to fulfill your STRESSED mood!',
@@ -120,11 +123,12 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Stressed')}}
+                  clickToChangeColor(e, 'Stressed')
+                }}
                       className='mood-link'
                        name='https://media.fromthegrapevine.com/assets/images/2018/4/red-pitaya.jpg.480x0_q71_crop-scale.jpg'
                        to='/slideshow/indifferent'>Stressed</NavLink></p>
-            <p><NavLink onClick={e => {
+            <p><NavLink onClick={ e => {
                     store.addNotification({
                     title: 'ROMANTIC',
                     message: 'Here are some recipes to fulfill your ROMANTIC mood!',
@@ -136,11 +140,12 @@ class MoodContainer extends React.Component {
                       duration: 5000
                     }
                   })
-                  clickToChangeColor(e, 'Romantic')}}
+                  clickToChangeColor(e, 'Romantic')
+                }}
                   className='mood-link'
                       name='https://img.buzzfeed.com/buzzfeed-static/static/2016-07/13/23/campaign_images/buzzfeed-prod-web09/17-heavenly-delicious-ways-to-eat-more-pink-food-2-25405-1468467179-0_dblbig.jpg'
                       to='/slideshow/romantic'>Romantic</NavLink></p>
-           <p><NavLink onClick={e => {
+           <p><NavLink onClick={ e => {
                    store.addNotification({
                    title: 'SAD',
                    message: 'Here are some recipes to fulfill your SAD mood!',
@@ -152,11 +157,12 @@ class MoodContainer extends React.Component {
                      duration: 5000
                    }
                  })
-                 clickToChangeColor(e, 'Sad')}}
+                 clickToChangeColor( e, 'Sad' )
+               }}
                  className='mood-link'
                       name='https://i.pinimg.com/originals/4a/a0/52/4aa0520cd218c3094e1ff690edd27994.jpg'
                       to='/slideshow/sad'>Sad</NavLink></p>
-           <p><NavLink onClick={e => {
+           <p><NavLink onClick={ e => {
                    store.addNotification({
                    title: 'JUST HUNGRY',
                    message: 'Here are some recipes to fulfill your hunger!',
@@ -168,7 +174,8 @@ class MoodContainer extends React.Component {
                      duration: 5000
                    }
                  })
-                 clickToChangeColor(e, 'Indifferent')}}
+                 clickToChangeColor(e, 'Indifferent')
+               }}
                  className='mood-link'
                       name='https://images.iphonephotographyschool.com/23050/1120/food.jpg'
                       to='/slideshow/hungry'>Just Hungry</NavLink></p>

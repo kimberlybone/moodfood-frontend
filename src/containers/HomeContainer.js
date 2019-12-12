@@ -36,7 +36,7 @@ class HomeContainer extends React.Component {
     this.props.fetchRecipes()
   }
 
-  displayRecipes = (recipes) => {
+  displayRecipes = ( recipes ) => {
     console.log(recipes);
       return recipes.map(recipe => {
         return <div><RecipeReviewCard key={ recipe.id }
@@ -67,4 +67,4 @@ const mapStateToProps = state => ({ recipes: state.recipes.allRecipes })
 
 const mapDispatchToProps = { fetchRecipes }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
+export default connect( mapStateToProps, mapDispatchToProps )( HomeContainer );

@@ -84,4 +84,4 @@ const mapStateToProps = state => ({ errors: state.errors, user: state.user })
 
 const mapDispatchToProps = { createNewUserToDB };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignupForm))
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(SignupForm) )

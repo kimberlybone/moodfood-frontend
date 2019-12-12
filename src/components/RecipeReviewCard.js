@@ -75,7 +75,7 @@ const RecipeReviewCard = (props) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={props.name}
+        title={ props.name }
         subheader={ cookingMinutes }
       />
       <CardMedia
@@ -126,4 +126,4 @@ const RecipeReviewCard = (props) => {
     </Card>
   );
 }
-export default withRouter(RecipeReviewCard)
+export default withRouter( RecipeReviewCard )

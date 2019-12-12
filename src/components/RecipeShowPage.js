@@ -70,4 +70,4 @@ const mapStateToProps = state => ({ recipe: state.recipes.currentRecipe, mood: s
 
 const mapDispatchToProps = { fetchRecipes: fetchRecipes, fetchIndividualRecipe: fetchIndividualRecipe }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeShowPage);
+export default connect( mapStateToProps, mapDispatchToProps )( RecipeShowPage );

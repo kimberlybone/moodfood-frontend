@@ -148,7 +148,7 @@ class Slideshow extends React.Component {
         <button className='view-all-btn' onClick={ this.viewAllRecipes }> View All Recipes </button>
           </div>
           <div>
-            <button className='slideshow-btn' onClick={ () => this.moreRecipes()}> Next </button>
+            <button className='slideshow-btn' onClick={ () => this.moreRecipes() }> Next </button>
           </div>
       </div>
     )
@@ -159,4 +159,4 @@ const mapStateToProps = state => ({ recipes: state.recipes.mood })
 
 const mapDispatchToProps = { fetchRecipesByMood }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Slideshow));
+export default withRouter( connect(mapStateToProps, mapDispatchToProps)(Slideshow) );
