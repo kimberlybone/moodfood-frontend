@@ -11,6 +11,7 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 - Filter by diet preference
 - Ingredient show page
+![](Assets/MFShowPg.gif)
 - Profile page
 - Slideshow of recipes
 - Make account and log in
@@ -42,7 +43,7 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 ## Installation
 
-*To view live version, go to this URL:[]()*
+<!-- *To view live version, go to this URL:[]()* -->
 
 *To view locally, follow the instructions below*
 1. Clone repository
