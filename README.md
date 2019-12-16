@@ -11,6 +11,7 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 - Filter by diet preference
 - Ingredient show page
+![](MFIntro.gif)
 - Profile page
 - Slideshow of recipes
 - Make account and log in
