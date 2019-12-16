@@ -20,14 +20,16 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 ## DEMO
 
+https://youtu.be/Nt9wXFrjiwA
+
 ## Instructions
-1. A user can log in or sign up
+***1. A user can log in or sign up***
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFIntro.gif)
 
-2. Pick the mood you are currently feeling
+***2. Pick the mood you are currently feeling***
 
-3. View the slideshow of recipes for the chosen mood
+***3. View the slideshow of recipes for the chosen mood***
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFChooseMood.gif)
 
@@ -35,16 +37,20 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFShowPg.gif)
 
-5. To view all recipes, click on "Home"
+***5. To view all recipes, click on "Home"***
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFHome.gif)
 
-6. Can click on down arrow of each recipe card to see instructions
+***6. Can click on down arrow of each recipe card to see instructions***
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFRCard.gif)
-7. Can filter by diet at the top of the Home page
-8. User can click on recipe picture to be redirected to that recipe's show page
-9. In the navigation bar, the user can click on profile to see their profile information
+
+***7. Can filter by diet at the top of the Home page***
+
+***8. User can click on recipe picture to be redirected to that recipe's show page***
+
+***9. In the navigation bar, the user can click on profile to see their profile information***
+
 
 ## Technologies
 - React js
