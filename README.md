@@ -25,7 +25,7 @@ https://youtu.be/Nt9wXFrjiwA
 ## Instructions
 ***1. A user can log in or sign up***
 
-![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFIntro.gif)
+![Alt Text](/src/Assets/MFIntro.gif)
 
 ***2. Pick the mood you are currently feeling***
 
@@ -33,7 +33,7 @@ https://youtu.be/Nt9wXFrjiwA
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFChooseMood.gif)
 
-4. Can click on recipe picture to redirect to recipe show page
+***4. Can click on recipe picture to redirect to recipe show page***
 
 ![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFShowPg.gif)
 
