@@ -31,19 +31,19 @@ https://youtu.be/Nt9wXFrjiwA
 
 ***3. View the slideshow of recipes for the chosen mood***
 
-![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFChooseMood.gif)
+![Alt Text](/src/Assets/MFChooseMood.gif)
 
 ***4. Can click on recipe picture to redirect to recipe show page***
 
-![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFShowPg.gif)
+![Alt Text](/src/Assets/MFShowPg.gif)
 
 ***5. To view all recipes, click on "Home"***
 
-![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFHome.gif)
+![Alt Text](/src/Assets/MFHome.gif)
 
 ***6. Can click on down arrow of each recipe card to see instructions***
 
-![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFRCard.gif)
+![Alt Text](/src/Assets/MFRCard.gif)
 
 ***7. Can filter by diet at the top of the Home page***
 
