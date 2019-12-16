@@ -11,22 +11,36 @@ Think of a time when someone asked what you wanted to eat. Usually our response 
 
 - Filter by diet preference
 - Ingredient show page
-![](Assets/MFShowPg.gif)
 - Profile page
 - Slideshow of recipes
 - Make account and log in
 - Validations on account information
+
 
 ## DEMO
 
 ## Instructions
 1. A user can log in or sign up
 
+![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFIntro.gif)
+
 2. Pick the mood you are currently feeling
+
 3. View the slideshow of recipes for the chosen mood
+
+![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFChooseMood.gif)
+
 4. Can click on recipe picture to redirect to recipe show page
+
+![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFShowPg.gif)
+
 5. To view all recipes, click on "Home"
+
+![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFHome.gif)
+
 6. Can click on down arrow of each recipe card to see instructions
+
+![Alt Text](/Users/kimberlybone/dumbo-web-080519/mod-5/final-project/moodfood-frontend/src/Assets/MFRCard.gif)
 7. Can filter by diet at the top of the Home page
 8. User can click on recipe picture to be redirected to that recipe's show page
 9. In the navigation bar, the user can click on profile to see their profile information
