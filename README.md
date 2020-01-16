@@ -75,7 +75,7 @@ https://youtu.be/Nt9wXFrjiwA
   ```
 - Server needs to run on http://localhost:3000
 
-2. Go to backend repository to view backend installation
+2. Go to backend repository to view backend installation: [View backend](https://github.com/kimberlybone/moodfood-backend)
 
 ---
 ***Author: [Kimberly Bone](https://github.com/kimberlybone)***
